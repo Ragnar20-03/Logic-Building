@@ -6,6 +6,6 @@ int main()
     int Ans=0;
 
     Ans=No1+No2;
-    prontf("%d\n ,Ans");
+    printf("%d\n" ,Ans); 
     return 0;
 }
