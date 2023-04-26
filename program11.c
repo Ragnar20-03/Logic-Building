@@ -9,7 +9,7 @@ void Display()
 
 int main(void)
 {
-     for (int iCnt=1;iCnt<=5;iCnt++)
+     for (int iCnt = 1; iCnt <= 5; iCnt++)
     {
         Display();
     }
