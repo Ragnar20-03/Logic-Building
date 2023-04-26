@@ -3,7 +3,7 @@
 void Display(int iNo)
 {
 
-    if(iNo<0)  //Updator
+    if(iNo<0)  // -> Updator
     {
         iNo= -iNo;
     }
