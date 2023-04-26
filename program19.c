@@ -7,7 +7,7 @@ void Display(int iNo)
         printf("Please Enter Valid input\n");
         return;
     }
-    for (int iCnt=1;iNo <=5; iCnt++)
+    for (int iCnt=1;iCnt<=iNo; iCnt++)
     {
         printf("%d\n",iCnt);
     }

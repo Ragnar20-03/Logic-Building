@@ -6,7 +6,7 @@ void Display(int iNo)
     {
         iNo= -iNo;
     }
-    for (int iCnt=1;iNo <=5; iCnt++)
+    for (int iCnt=1;iCnt<=iNo; iCnt++)
     {
         printf("%d\n",iCnt);
     }
@@ -15,7 +15,7 @@ void Display(int iNo)
 int main(void)
 {
     int iValue=0;
-    printf("Enter the Frequency\n")
+    printf("Enter the Frequency\n");
     scanf("%d",&iValue);
 
     Display(iValue);
