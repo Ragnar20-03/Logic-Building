@@ -11,7 +11,7 @@ void Display(int iNo)
 int main(void)
 {
     int iValue=0;
-    printf("Enter the Frequency\n")
+    printf("Enter the Frequency\n");
     scanf("%d",&iValue);
 
     Display(iValue);
