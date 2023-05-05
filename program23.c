@@ -1,4 +1,5 @@
 #include<stdio.h>
+//  Display the Factors of Number..
 
 void DisplayFactors(int iNo)
 {

@@ -4,7 +4,7 @@ void DisplayFactors(int iNo)
 {
     int iCnt = 0;
 
-    for(iCnt = 1; iCnt <= (iNo / 2); iCnt++)       // O(N/2)
+    for(iCnt = 1; iCnt <= (iNo / 2); iCnt++)       // O(N/2)  
     {
         if((iNo % iCnt) == 0)
         {
