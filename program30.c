@@ -16,7 +16,7 @@ bool CheckPrime(int iNo)
     }
     return bFlag;
 }
-
+ 
 int main()
 {
     int iValue = 0;
