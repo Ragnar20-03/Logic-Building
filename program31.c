@@ -1,6 +1,10 @@
 #include<stdio.h>
 #include<stdbool.h>
 
+
+// Without Flag 
+
+
 bool CheckPrime(int iNo)
 {
     int iCnt = 0;
