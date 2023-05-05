@@ -6,7 +6,7 @@ long int CalculatePower(int iBase, int iPower)
     int iCnt = 0;
     long int iResult = 1;
 
-    if((iBase < 0) || (iPower < 0))
+    if( ( iBase < 0 ) || ( iPower < 0 ) )
     {
         return 0;
     }

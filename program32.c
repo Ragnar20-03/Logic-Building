@@ -19,7 +19,7 @@ int main()
     int iRet = 0;
 
     printf("Enter base : \n");
-    scanf("%d",&iValue1);           // 2
+    scanf("%d",&iValue1);           // 2 
     printf("Enter power : \n");
     scanf("%d",&iValue2);           // 5
 

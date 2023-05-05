@@ -11,7 +11,7 @@ bool CheckPrime(int iNo)
 
     // Time Complexity of Below Loop
     // input -> 6 then time complexity = 1
-    // input -> 11 then time complexity = n/2 i.e. Condition of ForLoop i.e 11/2=5;
+    // input -> 11 then time complexity = n/2 i.e. Condition of ForLoop    i.e    11/2 = 5 ; 
 
     for(iCnt = 2; iCnt <= (iNo/2); iCnt++)
     {
