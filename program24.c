@@ -1,13 +1,15 @@
 #include<stdio.h>
 
-
 void DisplayFactors(int iNo)
 {
     int iCnt = 0;
-    //      1           2         3
-    for(iCnt = 1; iCnt <= iNo; iCnt++)
+
+    for(iCnt = 1; iCnt <= (iNo / 2); iCnt++)       // O(N/2)
     {
-        printf("%d\n",iCnt); // 4
+        if((iNo % iCnt) == 0)
+        {
+            printf("%d\n",iCnt);
+        }
     }
 }
 
