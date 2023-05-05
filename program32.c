@@ -12,7 +12,7 @@ int CalculatePower(int iBase, int iPower)
     }
     return iResult;
 }
-
+ 
 int main()
 {
     int iValue1 = 0, iValue2 = 0;

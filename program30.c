@@ -9,7 +9,7 @@ bool CheckPrime(int iNo)
     int iCnt = 0;
     bool bFlag = true;  
           //1          //2          //3
-    for(iCnt = 2; iCnt <= (iNo/2); iCnt++) //  Loop stop when icnt is ((ino/2) + 1)
+    for(iCnt = 2; iCnt <= (iNo/2); iCnt++) //  Loop stop when icnt is == ((ino/2) + 1)
     {
         if((iNo % iCnt) == 0)           //4  
         {
