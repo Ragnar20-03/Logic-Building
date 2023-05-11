@@ -22,7 +22,20 @@ int main()          // Entry point function
     for(iCnt = 0; iCnt < iSize; iCnt++)
     {
         scanf("%d",&ptr[iCnt]);
+        //  & ptr[iCnt] means ptr chya iCnt chya Addrees wr data takayacha ahe;
     }
+// //////////////////////////////////////////////////////////////////////////
+
+    // printf("%d\n",*ptr);
+    // ptr++;
+    // printf("%d\n",*ptr);
+    // ptr++;
+    // printf("%d\n",*ptr);
+
+// We Dont Change ptr as ++ or -- instead we use Counter iCnt;
+
+// //////////////////////////////////////////////////////////////////////////
+
     printf("Elements of array are : \n");
     for(iCnt = 0; iCnt < iSize; iCnt++)
     {
@@ -32,6 +45,15 @@ int main()          // Entry point function
     Demo(ptr,iSize);    // Demo(400,4);
     // Step 6: Deallocate the memory of array
     free(ptr);
+
+    if(ptr == NULL)
+    {
+        printf("Memory Dealoocated susscesfyyly\n");
+    }
+    else 
+    {
+        printf("Memory Not DELETED\n");
+    }
 
     return 0;       // Return success to OS
 }
