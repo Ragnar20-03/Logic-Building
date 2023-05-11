@@ -26,11 +26,11 @@ int main()          // Entry point function
     }
 // //////////////////////////////////////////////////////////////////////////
 
-    // printf("%d\n",*ptr);
-    // ptr++;
-    // printf("%d\n",*ptr);
-    // ptr++;
-    // printf("%d\n",*ptr);
+    // printf("%d\n",*ptr); -> 10  Value
+    // ptr++;               -> 404 Adrees
+    // printf("%d\n",*ptr); -> 20  Value
+    // ptr++;               -> 408 Adress
+    // printf("%d\n",*ptr); -> 30  Value
 
 // We Dont Change ptr as ++ or -- instead we use Counter iCnt;
 
