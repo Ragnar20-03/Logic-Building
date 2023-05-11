@@ -1,22 +1,44 @@
+// EvenDisplay of N numbers
 #include<stdio.h>
 #include<stdlib.h>
 
-int main()
+int EvenDisplay(int Arr[] , int iLength)
 {
-    int iSize=0;
-    int * ptr = NULL;
+    for (int iCnt =0; iCnt<iLength; iCnt++)
+    {
+        if(((Arr[iCnt]) % 2 ) == 0)
+        {
+            printf("%d\n" , Arr[iCnt]);
+        }
+    }
+    
+}
 
-    printf("Emter theSizhe of Epemrnts");
+int main()
+{       
+    int iSize = 0;
+    int *ptr = NULL;
+    int iCnt =0; 
+    int iRet =0 ;
+
+    printf("Enter the Size..");
     scanf("%d",&iSize);
 
-    ptr = (int *) malloc(iSize * sizeof(int));
+    printf("Enter The Numbers");
 
-    if(ptr == NULL)
+    ptr = (int *) malloc (iSize * sizeof(int));
+
+    for(iCnt=0; iCnt<iSize ; iCnt++)
     {
-        printf("Memory Not Allocated");
-        return -1;
-    } 
-    printf("Memory ALlocated");
+        scanf("%d",&ptr[iCnt]);
+    }
+    for(iCnt=0; iCnt<iSize ; iCnt++)
+    {
+        printf("%d\n",ptr[iCnt]);
+    }
 
+      EvenDisplay(ptr , iSize);
+
+    free(ptr);
     return 0;
 }

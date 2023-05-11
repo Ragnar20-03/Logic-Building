@@ -2,6 +2,7 @@
 #include<stdlib.h>  // Memory management
 // void Demo(int *Arr, int iLength)
 void Demo(int Arr[], int iLength)
+//  * = []  means Arr[] == *Arr
 {
     // Step 5 : Perform the operation on array 
 }
@@ -41,8 +42,12 @@ int main()          // Entry point function
     {
         printf("%d\n",ptr[iCnt]);
     }
+
+
     // Step 4: Pass the array to the function
     Demo(ptr,iSize);    // Demo(400,4);
+
+
     // Step 6: Deallocate the memory of array
     free(ptr);
 
