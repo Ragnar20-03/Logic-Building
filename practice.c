@@ -1,44 +1,57 @@
-// EvenDisplay of N numbers
 #include<stdio.h>
 #include<stdlib.h>
 
-int EvenDisplay(int Arr[] , int iLength)
+void Demo(int Arr[] , int iLength)
 {
-    for (int iCnt =0; iCnt<iLength; iCnt++)
-    {
-        if(((Arr[iCnt]) % 2 ) == 0)
-        {
-            printf("%d\n" , Arr[iCnt]);
-        }
-    }
-    
+    printf("Arr :  %d\n\n", Arr);
+    printf("&Arr :  %d\n\n", &Arr);
+    printf("&Arr[0] :  %d\n\n", &Arr[0]);
+    printf("&Arr[0] :  %d\n\n", Arr[0]);
+    printf("&Arr[1] :  %d\n\n", &Arr[1]);
+    printf("&Arr[2] :  %d\n\n", Arr[2]);
+    printf("&Arr[3] :  %d\n\n", &Arr[3]);
+    printf("&Arr[3] :  %d\n\n", Arr[3]);
+    Arr[3] = 566;
 }
 
 int main()
-{       
-    int iSize = 0;
-    int *ptr = NULL;
-    int iCnt =0; 
-    int iRet =0 ;
+{
 
-    printf("Enter the Size..");
+    int *ptr =NULL;
+    int iSize =0;
+    int iCnt =0;
+    
+    printf("enter the Size of Arrya\n");
     scanf("%d",&iSize);
 
-    printf("Enter The Numbers");
+    ptr = (int *)malloc(iSize * sizeof(int) );
 
-    ptr = (int *) malloc (iSize * sizeof(int));
+    printf("enter the Elements of Arrya\n");
 
-    for(iCnt=0; iCnt<iSize ; iCnt++)
+    for (iCnt =0; iCnt<iSize; iCnt++)
     {
-        scanf("%d",&ptr[iCnt]);
-    }
-    for(iCnt=0; iCnt<iSize ; iCnt++)
-    {
-        printf("%d\n",ptr[iCnt]);
+        scanf("%d" , &ptr[iCnt]);
     }
 
-      EvenDisplay(ptr , iSize);
+    printf("ptr :  %d\n\n", ptr);
+    printf("*ptr :  %d\n\n", *ptr);
 
-    free(ptr);
+    printf("ptr1 :  %d\n\n" , &ptr[1]);
+    printf("ptr1 :  %d\n\n" , ptr[1]);
+    
+    ptr++;
+    printf("ptr ++ :  %d\n\n", *ptr);
+    printf("ptr 2 :  %d\n\n" , &ptr[2]);
+    printf("ptr 2 :  %d\n\n" , ptr[2]);
+    
+    printf("ptr 3 :  %d\n\n" , &ptr[3]);
+    printf("ptr 3 :  %d\n\n" , ptr[3]);
+    
+    printf("Demo Function \n");
+    Demo(ptr , iSize);
+
+    printf("ptr 3  After Change:  %d\n\n" , ptr[3]);
+
     return 0;
+
 }
