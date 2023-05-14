@@ -3,44 +3,37 @@
 
 // is Array is Sorted ???s
 
-int MiniMum(int Arr[] , int iLength){
+void MinimumMaximum(int Arr[] , int iLength){
 
     int iCnt =0;
     
-    int iMin =Arr[0]; //IMP
+    int iMin = Arr[0];
+    int iMax = Arr[0]; 
 
     for (iCnt =0; iCnt < iLength; iCnt ++)
     {
-        if(Arr[iCnt ] < iMin)
+        if(Arr[iCnt] < iMin)
         {
             iMin = Arr[iCnt];
         }
-    }
-    return iMin;
-}   
 
-int MaxiMum(int Arr[] , int iLength){
-
-    int iCnt =0;
-    
-    int iMax =Arr[0]; //IMP
-
-    for (iCnt =0; iCnt < iLength; iCnt ++)
-    {
         if(Arr[iCnt ] > iMax)
         {
             iMax = Arr[iCnt];
         }
     }
-    return iMax;
+
+    printf("Latgest Element is : %d\n" ,iMax);
+    printf("Smallest Element is : %d\n" ,iMin);
 }   
+
 
 int main()
 {
     int iSize =0;
     int *ptr =NULL;
     int iCnt =0;
-    int iRet =0;
+
 
 
     printf("Enter Number of Elements..\n");
@@ -68,13 +61,7 @@ int main()
         printf("%d\n",ptr[iCnt]);
     }
     
-    iRet = MiniMum(ptr , iSize);
-
-    printf("Smallest Element is %d\n",iRet);
-
-    iRet = MaxiMum(ptr , iSize);
-    
-    printf("Largest Elements is %d\n" , iRet);
+     MinimumMaximum(ptr , iSize);
 
     free(ptr);
     

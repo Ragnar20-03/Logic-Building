@@ -1,46 +1,32 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<stdbool.h>
 
-// is Array is Sorted ???s
 
-int MiniMum(int Arr[] , int iLength){
-
-    int iCnt =0;
-    
-    int iMin =Arr[0]; //IMP
-
-    for (iCnt =0; iCnt < iLength; iCnt ++)
-    {
-        if(Arr[iCnt ] < iMin)
-        {
-            iMin = Arr[iCnt];
-        }
-    }
-    return iMin;
-}   
-
-int MaxiMum(int Arr[] , int iLength){
+bool Search(int Arr[] , int iLength, int iNo){
 
     int iCnt =0;
-    
-    int iMax =Arr[0]; //IMP
+    bool bResult = false;
 
-    for (iCnt =0; iCnt < iLength; iCnt ++)
+    for(iCnt = 0 ;iCnt < iLength ; iCnt ++)
     {
-        if(Arr[iCnt ] > iMax)
+        if(Arr[iCnt] == iNo)
         {
-            iMax = Arr[iCnt];
+            bResult =true;
+            break;
         }
     }
-    return iMax;
-}   
+
+    return  bResult;
+}
 
 int main()
 {
     int iSize =0;
     int *ptr =NULL;
+    int iValue =0;
     int iCnt =0;
-    int iRet =0;
+    bool bRet = false;
 
 
     printf("Enter Number of Elements..\n");
@@ -55,11 +41,15 @@ int main()
 
     }
 
+
     printf("Enter the number of elements..\n");
     for (iCnt =0; iCnt < iSize ; iCnt ++)
     {
         scanf("%d",&ptr[iCnt]);
     }
+
+    printf("Enter the Element that you want to search..\n");
+    scanf("%d",&iValue);
 
     printf("ELements are .. \n");
 
@@ -68,13 +58,16 @@ int main()
         printf("%d\n",ptr[iCnt]);
     }
     
-    iRet = MiniMum(ptr , iSize);
+   bRet= Search(ptr , iSize , iValue);
 
-    printf("Smallest Element is %d\n",iRet);
-
-    iRet = MaxiMum(ptr , iSize);
-    
-    printf("Largest Elements is %d\n" , iRet);
+   if(bRet == true)
+   {
+    printf("%d is Present in Array\n",iValue);
+   }
+   else
+   {
+    printf("%d is Not Present in Array\n",iValue);
+   }
 
     free(ptr);
     
