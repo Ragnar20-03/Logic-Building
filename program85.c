@@ -3,7 +3,23 @@
 
 // is Array is Sorted ???s
 
-int LargestNumber(int Arr[] , int iLength){
+int MiniMum(int Arr[] , int iLength){
+
+    int iCnt =0;
+    
+    int iMin =Arr[0]; //IMP
+
+    for (iCnt =0; iCnt < iLength; iCnt ++)
+    {
+        if(Arr[iCnt ] < iMin)
+        {
+            iMin = Arr[iCnt];
+        }
+    }
+    return iMin;
+}   
+
+int MaxiMum(int Arr[] , int iLength){
 
     int iCnt =0;
     
@@ -18,7 +34,6 @@ int LargestNumber(int Arr[] , int iLength){
     }
     return iMax;
 }   
-
 
 int main()
 {
@@ -53,9 +68,14 @@ int main()
         printf("%d\n",ptr[iCnt]);
     }
     
-    iRet = LargestNumber(ptr , iSize);
+    iRet = MiniMum(ptr , iSize);
 
-    printf("Largest Number is %d\n",iRet);
+    printf("Smallest Element is %d\n",iRet);
+
+    iRet = MaxiMum(ptr , iSize)
+    {
+        printf("Largest Elements is %d\n" , iRet);
+    }
 
     free(ptr);
     
