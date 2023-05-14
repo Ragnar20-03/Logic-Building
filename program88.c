@@ -6,18 +6,25 @@
 bool Search(int Arr[] , int iLength, int iNo){
 
     int iCnt =0;
-    bool bFlag = false;
+
 
     for(iCnt = 0 ;iCnt < iLength ; iCnt ++)
     {
         if(Arr[iCnt] == iNo)
         {
-            bFlag =true;
+
             break;
         }
     }
 
-    return  bFlag;
+    if(iCnt == iLength)
+    {
+        return false;
+    }
+    else
+    {
+        return true;
+    }
 }
 
 int main()

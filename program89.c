@@ -2,22 +2,30 @@
 #include<stdlib.h>
 #include<stdbool.h>
 
+// Dont uSe this Logic(segmentation Fault)....
 
 bool Search(int Arr[] , int iLength, int iNo){
 
     int iCnt =0;
-    bool bFlag = false;
+
 
     for(iCnt = 0 ;iCnt < iLength ; iCnt ++)
     {
         if(Arr[iCnt] == iNo)
         {
-            bFlag =true;
+
             break;
         }
     }
 
-    return  bFlag;
+    if(Arr[iCnt] == iNo)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 
 int main()

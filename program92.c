@@ -2,22 +2,29 @@
 #include<stdlib.h>
 #include<stdbool.h>
 
+#define ERR_NOTFOUND -1
 
-bool Search(int Arr[] , int iLength, int iNo){
 
-    int iCnt =0;
-    bool bFlag = false;
+int SearchLastOccurence(int Arr[] , int iLength, int iNo){
+
+    int iCnt = 0;
+    int iIndex =0;
 
     for(iCnt = 0 ;iCnt < iLength ; iCnt ++)
     {
         if(Arr[iCnt] == iNo)
         {
-            bFlag =true;
-            break;
+                iIndex = iCnt;
         }
     }
+    if(iCnt == iLength)
+    {
+        return ERR_NOTFOUND;
+    }
+    else{
+        return iIndex;
+    }
 
-    return  bFlag;
 }
 
 int main()
@@ -26,7 +33,7 @@ int main()
     int *ptr =NULL;
     int iValue =0;
     int iCnt =0;
-    bool bRet = false;
+    int iRet = 0;
 
 
     printf("Enter Number of Elements..\n");
@@ -48,7 +55,7 @@ int main()
         scanf("%d",&ptr[iCnt]);
     }
 
-    printf("Enter the Element that you want to search..\n");
+    printf("Enter the Element that you want to SearchLastOccurence..\n");
     scanf("%d",&iValue);
 
     printf("ELements are .. \n");
@@ -58,16 +65,16 @@ int main()
         printf("%d\n",ptr[iCnt]);
     }
     
-   bRet= Search(ptr , iSize , iValue);
+   iRet= SearchLastOccurence(ptr , iSize , iValue);
 
-   if(bRet == true)
-   {
-    printf("%d is Present in Array\n",iValue);
-   }
-   else
-   {
-    printf("%d is Not Present in Array\n",iValue);
-   }
+    if(iRet == ERR_NOTFOUND)
+    {
+        printf("There is No Such Element");
+    }
+    else{
+        printf("%doccured at index %d \n",iValue, iRet );
+    }
+
 
     free(ptr);
     
