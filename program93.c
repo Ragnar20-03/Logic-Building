@@ -4,27 +4,23 @@
 
 #define ERR_NOTFOUND -1
 
-// Search Last Occurence by forwad LOOP
+// Search Last Occurence by Backward LOOP
 
 int SearchLastOccurence(int Arr[] , int iLength, int iNo){
 
     int iCnt = 0;
-    int iIndex = ERR_NOTFOUND;
 
-    for(iCnt = 0 ;iCnt < iLength ; iCnt ++)
+
+    for(iCnt = iLength-1 ;iCnt >= 0 ; iCnt --)
     {
         if(Arr[iCnt] == iNo)
         {
-                iIndex = iCnt;
+                break;
         }
     }
-    if(iCnt == iLength)
-    {
-        return ERR_NOTFOUND;
-    }
-    else{
-        return iIndex;
-    }
+
+    
+        return iCnt;
 
 }
 
@@ -73,7 +69,7 @@ int main()
         printf("There is No Such Element");
     }
     else{
-        printf("%doccured at index %d \n",iValue, iRet );
+        printf("%d occured at index %d \n",iValue, iRet );
     }
 
 
