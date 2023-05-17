@@ -39,6 +39,7 @@ int main()
         printf("%d\n",ptr[iCnt]);
     }
     
+    printf("\n\n");
     Demo(ptr , iSize);
 
     free(ptr);
