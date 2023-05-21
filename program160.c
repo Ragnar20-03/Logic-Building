@@ -1,7 +1,10 @@
 #include<stdio.h>
-#include<string.h>
 
-// Inbuilt Function strlen();
+
+int strlenX(char str[])
+{
+
+}
 
 int main()
 {
@@ -9,9 +12,9 @@ int main()
     int iRet = 0;
 
     printf("Enter String : \n");
-    scanf("%[^'\n']s",Arr);
+    scanf("%[^'\n",Arr);
 
-    iRet = strlen(Arr);
+    iRet = strlenX(Arr);    //strlenX(100)
 
     printf("Length of string is : %d \n",iRet);
 
