@@ -8,11 +8,12 @@ void strcpyX( char *src , char *dest)
     while (*src != '\0')
     {
         *dest = *src;
-        
-        src++;
-        dest++;
+
+         src++;
+         dest++;
     }
 
+    *dest = '\0';
 }
 
 int main()
@@ -25,7 +26,7 @@ int main()
 
      strcpyX( Arr , Brr );
 
-     printf("String After Editing Coppy ng is : %s\n",Arr);
+     printf("String After Editing Coppy is : %s\n",Brr);
 
     return 0;
 }
