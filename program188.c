@@ -1,7 +1,7 @@
 #include<stdio.h>
 
 
-// Coppy Reverse  string into Another  
+// Coppy Reverse  string into Another   Using For
 
 void strcpyReverse( char *src , char *dest)
 {
