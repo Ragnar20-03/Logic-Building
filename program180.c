@@ -1,5 +1,5 @@
 #include<stdio.h>
-#define ERR_NOTFOUND -1
+
 
 //  Replace 'Small ' with its Capital Letter  
 

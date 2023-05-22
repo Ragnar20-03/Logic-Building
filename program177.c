@@ -1,5 +1,5 @@
 #include<stdio.h>
-#define ERR_NOTFOUND -1
+
 
 //  Replace 'capital' instead of *' ' 
 

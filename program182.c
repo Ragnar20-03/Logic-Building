@@ -1,19 +1,21 @@
 #include<stdio.h>
 
-
+// Find Gap of ASCII Character..
 //  Replace 'Capital ' with its Small Letter  
 
 void strlwrX( char *str )
 {
+    int Gap = 'a' - 'A'
+
   while(*str != '\0')
   {
     if ((*str >= 'A') && (*str <= 'Z'))
     {
-        *str = *str + 32;
+        *str = *str + Gap;
     }
      else if ((*str >= 'a') && (*str <= 'z'))
     {
-        *str = *str - 32;
+        *str = *str - Gap;
     }
       str++;
   }
