@@ -3,7 +3,7 @@
 
 //  Replace 'Capital ' with its Small Letter  
 
-void strlwrX( char *str )
+void strToggle( char *str )
 {
   while(*str != '\0')
   {
@@ -26,7 +26,7 @@ int main()
     printf("Enter String : \n");
     scanf("%[^'\n']s" , Arr);
 
-     strlwrX( Arr );
+     strToggle( Arr );
 
      printf("String After Editing is : %s\n",Arr);
 
