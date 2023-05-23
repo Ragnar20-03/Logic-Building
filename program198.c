@@ -2,15 +2,10 @@
 #include<stdbool.h>
 
 
-// Check strings are equal or not 3rd Approach
 
 bool strcmpX( char *str1 , char *str2 )
 {
-    while ((*str1 != '\0') && (str2 != '\0') && (*str1 != *str2) )
-    {
-        str1++;
-        str2++;
-    }
+   for(; ((*str1 != '\0') && (str2 != '\0') && (*str1 != *str2)); str1++, str2++);  //Semicolon is important
 
     return (( *str1 == '\0') && (*str2 == '\0') );
 }

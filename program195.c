@@ -29,8 +29,9 @@ int main()
 
     printf("Enter String : \n");
     scanf("%[^'\n']s" , Arr);
-    printf("Enter number of Letters that you want to Coppy\n");
-    scanf("%d",&iNo);
+
+    printf("Enter Second String : \n");
+    scanf(" %[^'\n']s" , Arr);
 
     bRet =  strcmpx( Arr , Brr  );
 

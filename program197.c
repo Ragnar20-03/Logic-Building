@@ -2,7 +2,6 @@
 #include<stdbool.h>
 
 
-// Check strings are equal or not 3rd Approach
 
 bool strcmpX( char *str1 , char *str2 )
 {
