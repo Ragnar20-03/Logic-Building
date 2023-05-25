@@ -1,24 +1,22 @@
 #include<stdio.h>
+#include<stdbool.h>
 
-
-// Check strings are equal or not
-
-void strcmpx( char *str1 , char *str2 )
+bool strcmpX(char *str1, char *str2)
 {
-    while ((*src != '\0') && (str2 != 0) && (*str1 != str2) )
+    while((*str1 != '\0') && (*str2 != '\0') && (*str1 == *str2))
     {
         str1++;
         str2++;
     }
 
-    if ((*str1 == '\0') && (*str2 == '\0'))
+    if((*str1 == '\0') && (*str2 == '\0'))
     {
         return true;
     }
-    else{
+    else
+    {
         return false;
     }
-
 }
 
 int main()
@@ -27,24 +25,22 @@ int main()
     char Brr[20];
     bool bRet = false;
 
-    printf("Enter String : \n");
-    scanf("%[^'\n']s" , Arr);
+    printf("Enter first string : \n");
+    scanf("%[^'\n']s",Arr);
 
-    printf("Enter Second String : \n");
-    scanf(" %[^'\n']s" , Arr);
+    printf("Enter second string : \n");
+    scanf(" %[^'\n']s",Brr);
 
-    bRet =  strcmpx( Arr , Brr  );
+    bRet = strcmpX(Arr,Brr);    // strcmpX(100,200);
 
     if(bRet == true)
     {
-        printf("Strings Are equal : \n");
+        printf("Both the strings are identical\n");
     }
     else
     {
-        printf("Strings Are Not  equal : \n");
-
+        printf("Both the strings are diffrent\n");
     }
 
-    
     return 0;
 }

@@ -1,18 +1,14 @@
 #include<stdio.h>
 #include<stdbool.h>
 
-
-// Check strings are equal or not 3rd Approach
-
-bool strcmpX( char *str1 , char *str2 )
+bool strcmpX(char *str1, char *str2)
 {
-    while ((*str1 != '\0') && (str2 != '\0') && (*str1 != *str2) )
+    while((*str1 != '\0') && (*str2 != '\0') && (*str1 == *str2))
     {
         str1++;
         str2++;
     }
-
-    return (( *str1 == '\0') && (*str2 == '\0') );
+    return((*str1 == '\0') && (*str2 == '\0'));
 }
 
 int main()
@@ -21,24 +17,22 @@ int main()
     char Brr[20];
     bool bRet = false;
 
-    printf("Enter first String : \n");
-    scanf("%[^'\n']s" , Arr);
+    printf("Enter first string : \n");
+    scanf("%[^'\n']s",Arr);
 
-    printf("Enter second String : \n");
-    scanf(" %[^'\n']s" , Brr);
+    printf("Enter second string : \n");
+    scanf(" %[^'\n']s",Brr);
 
-        bRet =  strcmpX( Arr , Brr  );
+    bRet = strcmpX(Arr,Brr);    // strcmpX(100,200);
 
-        if(bRet == true)
-        {
-            printf("Strings Are equal : \n");
-        }
-        else
-        {
-            printf("Strings Are Not  equal : \n");
+    if(bRet == true)
+    {
+        printf("Both the strings are identical\n");
+    }
+    else
+    {
+        printf("Both the strings are diffrent\n");
+    }
 
-        }
-
-    
     return 0;
 }
