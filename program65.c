@@ -1,53 +1,47 @@
 #include<stdio.h>
 #include<stdbool.h>
 
-// Check Palidrome
-
-bool CheckPalidrome(int iNo)
+bool CheckPallindrome(int iNo)
 {
-    int iDigit =0;
+    int iDigit = 0;
     int iReverse = 0;
-    int tIno=0;
+    int iTemp = iNo;
 
-     tIno = iNo;
-
-    while (tIno != 0)
+    while(iNo != 0)
     {
-        iDigit = tIno % 10;
-        iReverse = (iReverse * 10 )+ iDigit;
-        tIno = tIno /10;
+        iDigit = iNo % 10;
+        iReverse = (iReverse * 10)+iDigit;
+        iNo = iNo / 10;
     }
 
-    if (iReverse == iNo)
+    if(iReverse == iTemp)
     {
         return true;
     }
-    else{
-
+    else
+    {   
         return false;
     }
-    
 }
 
 int main()
 {
-    int iValue=0;
-    bool bRet=0;
+    int iValue = 0;
+    bool bRet = false;
 
-    printf("Enter Number:\n");
+    printf("Enter number : \n");
     scanf("%d",&iValue);
 
-     bRet= CheckPalidrome(iValue);
+    bRet = CheckPallindrome(iValue);
 
-   if(bRet == true)
-   {
-    printf("number is Palidrome:\n");
-
-   }
-   else
-   {
-
-    printf("number is not Palidrome:\n");
-   }
+    if(bRet == true)
+    {
+        printf("%d is a pallindrome number\n",iValue);
+    }
+    else
+    {
+        printf("%d is not a pallindrome number\n",iValue);
+    }
+    
     return 0;
 }

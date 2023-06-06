@@ -12,7 +12,7 @@ bool CheckPerfect(int iNo)
         {
             iSum = iSum + iCnt;
         }
-    } 
+    }
 
     if(iSum == iNo)
     {

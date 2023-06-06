@@ -2,18 +2,22 @@
 
 void Display(int iNo)
 {
-    for (int iCnt=1;iCnt<=iNo; iCnt++)
+    int iCnt = 0;
+
+    for(iCnt = 1; iCnt <= iNo; iCnt++)
     {
         printf("%d\n",iCnt);
     }
-}  
+}
 
-int main(void)
+int main()
 {
-    int iValue=0;
-    printf("Enter the Frequency\n");
+    int iValue = 0;
+
+    printf("Enter the frequency : \n");
     scanf("%d",&iValue);
 
     Display(iValue);
+
     return 0;
 }

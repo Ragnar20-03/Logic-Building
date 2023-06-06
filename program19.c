@@ -2,23 +2,29 @@
 
 void Display(int iNo)
 {
-    if(iNo<0)
+    int iCnt = 0;
+
+    if(iNo < 0)     // Filter for negative input
     {
-        printf("Please Enter Valid input\n");
+        printf("Error : Invalid Input.\n");
+        printf("Note : Please enter positive number\n");
         return;
     }
-    for (int iCnt=1;iCnt<=iNo; iCnt++)
+
+    for(iCnt = 1; iCnt <= iNo; iCnt++)
     {
         printf("%d\n",iCnt);
     }
-}  
+}
 
-int main(void)
+int main()
 {
-    int iValue=0;
-    printf("Enter the Frequency\n")
+    int iValue = 0;
+
+    printf("Enter the frequency : \n");
     scanf("%d",&iValue);
 
     Display(iValue);
+
     return 0;
 }

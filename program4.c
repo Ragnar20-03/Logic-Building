@@ -1,47 +1,72 @@
+/*
+    Steps to create the application
+
+    Step 1 : Understand the problem statement
+    Step 2 : Write the algorithm
+    Step 3 : Decide the programming language
+    Step 4 : Write the program
+    Step 5 : Test the written program 
+
+*/
+
+// Wriete a program which performs addition of two numbers
 
 /*
-    Algorithm:
+    Algorithm
 
     START
-        Accept First Number As N01
-        Accept Second Number As N02
-        Create One Variable s Ans
+        Accept First Number as No1
+        Accept Second Number as No2
+        Create one variable as ANS
         Perform Addition of No1 and No2
-        Store The Addition into variable Ans
-        Display The value Of ans
+        Store the addition into variable ANS
+        Display the value of ANS
     STOP
 */
 
-///////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
 //
-// Write A Program Which Performs addition of Two Numbers
+// Problem Statement : Wriete a program which performs addition of two numbers
 //
-///////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
 
-#include <stdio.h>
+#include<stdio.h>
 
-unsigned int Addition(unsigned int iValue1, unsigned int iValue2 )
+/////////////////////////////////////////////////////////////////////////////////
+//
+//  Function Name : Addition
+//  Input :         Unsigned integer, Unsigned integer
+//  Output :        Unsigned integer
+//  Description :   Performs addition of 2 numbers
+//  Author :        Piyush Manohar Khairnar
+//  Date :          18/04/2023
+//
+/////////////////////////////////////////////////////////////////////////////////
+
+unsigned int Addition(unsigned int iValue1, unsigned int iValue2)
 {
-    unsigned int iResult=0;
-    iResult=iValue1+iValue2;
+    unsigned int iResult = 0;
+    iResult = iValue1 + iValue2;
     return iResult;
 }
-///////////////////////////////////////////////////////
-// Entry Point Function
-///////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////////////
+//  Entry Point function
+/////////////////////////////////////////////////////////////////////////////////
 
 int main()
 {
-    unsigned int iNo1=0,iNo2=0,iAns=0;
+    unsigned int iNo1 = 0, iNo2 = 0, iAns = 0;
 
-    printf("Enter First Number\n");
+    printf("Enter first number : \n");
     scanf("%d",&iNo1);
 
-    printf("Enter Second Number\n");
+    printf("Enter second number : \n");
     scanf("%d",&iNo2);
 
-    iAns=Addition(iNo1,iNo2);
-    printf("Addition is : %d\n",iAns);
+    iAns = Addition(iNo1, iNo2);
+
+    printf("Addition is : %d \n",iAns);
+
     return 0;
 }
-// 

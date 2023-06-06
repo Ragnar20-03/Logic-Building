@@ -1,55 +1,51 @@
-// Which Accepts the marks and display the calss accordingly.
-/*
-0 to 34         Fail
-35 to 49        Pass Class
-50 to 59        Second class
-60 to 74        First Class
-75 to 100       Destinction
-*/
+// Write a program which accepts the marks and display the class accordingly
+//  0 to 34         Fail
+//  35 to 49        Pass Class
+//  50 to 59        Second Class
+//  60 to 74        First Class
+// 75 to 100        First Class with Deistinction
 
-#include <stdio.h>
+#include<stdio.h>       // For printf and scanf
 
 void DisplayClass(float fMarks)
 {
-    if((fMarks < 0.0f) || (fMarks > 100.00f))  //Filter
+    if((fMarks < 0.0f) || (fMarks > 100.00f))    //Filter
     {
-        printf("Invalid Input \n");
-        printf("Please Enter the marks in between range 0 to 100\n");
-
+        printf("Invalid Input\n");
+        printf("Please enter the marks in between the range 0 to 100");
         return;
-    }   
+    }
 
-    if((fMarks<35.00f )&& (fMarks >= 0.0f))
+    if((fMarks >= 0.0f) && (fMarks < 35.00f))
     {
-        printf("Fail !! \n");
+        printf("You are fail\n");
     }
-    else if((fMarks >= 35.00f ) && (fMarks < 50.00f) )
+    else if((fMarks >= 35.00f) && (fMarks < 50.00f))
     {
-        printf("Pass Class \n");
+        printf("You got pass class\n");
     }
-    else if((fMarks >= 50.00f) && (fMarks < 60.00f) )
+    else if((fMarks >= 50.00f) && (fMarks < 60.00f))
     {
-        printf("Second Class\n");
+        printf("You got second class\n");  
     }
-    else if((fMarks >= 60.00f) && (fMarks < 75.00f) )
+    else if((fMarks >= 60.00f) && (fMarks < 75.00f))
     {
-        printf("First Class \n");
+        printf("You got first class\n");
     }
-    else if((fMarks >= 75.00f) && (fMarks <= 100.00f) )
+    else if((fMarks >= 75.00f) && (fMarks <= 100.00f))
     {
-        printf(" First Class With Destinction \n");
+        printf("You got first class with distinction\n");
     }
-    
 }
 
-
-int main(void)
+int main()
 {
-    float fValue=0.0f;
+    float fValue = 0.0f;
 
-    printf("Enter Your Marks :\n");
+    printf("Please enter your percentage : \n");
     scanf("%f",&fValue);
 
     DisplayClass(fValue);
+
     return 0;
 }

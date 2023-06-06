@@ -1,11 +1,8 @@
 #include<stdio.h>
 
-
-// Coppy Capital letter in string into Another  
-
-void strcpyToggleX( char *src , char *dest)
+void strcpytoggleX(char *src, char *dest)
 {
-    while (*src != '\0')
+    while(*src != '\0')
     {
         if((*src >= 'A') && (*src <= 'Z'))
         {
@@ -19,10 +16,10 @@ void strcpyToggleX( char *src , char *dest)
         {
             *dest = *src;
         }
-         src++;
-         dest++;
+        dest++;
+        src++;
     }
-        *dest = '\0';
+    *dest = '\0';
 }
 
 int main()
@@ -30,12 +27,12 @@ int main()
     char Arr[20];
     char Brr[20];
 
-    printf("Enter String : \n");
-    scanf("%[^'\n']s" , Arr);
+    printf("Enter string : \n");
+    scanf("%[^'\n']s",Arr);
 
-     strcpyToggleX( Arr , Brr );
+    strcpytoggleX(Arr,Brr);
 
-     printf("String After Editing Coppy is : %s\n",Brr);
+    printf("String after copy is : %s\n",Brr);
 
     return 0;
 }

@@ -1,9 +1,5 @@
-#include <stdio.h>
 
-void Diaplay(int iNo1)
-{
-
-}
+#include<stdio.h>
 
 int main()
 {
@@ -13,5 +9,5 @@ int main()
     printf("4\n");
     printf("5\n");
 
-    return 0;
+return 0;
 }

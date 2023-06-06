@@ -1,20 +1,17 @@
 #include<stdio.h>
 
-// Length of SmaCapitalll letters in a String....
-
-int strlenCapital(char *str)
+int strlenCapitalX(char *str)
 {
     int iCount = 0;
-    while(*str !=  '\0'){
 
-        if((*str >= 'A') && (*str <= 'Z') )
+    while(*str != '\0')
+    {
+        if((*str >= 'A') && (*str <= 'Z'))
         {
             iCount++;
         }
-            str++;
-
+        str++;
     }
-
     return iCount;
 }
 
@@ -23,12 +20,11 @@ int main()
     char Arr[10];
     int iRet = 0;
 
-    printf("Enter String : \n");
-    scanf("%[^'\n]s",Arr);
+    printf("Enter string : \n");
+    scanf("%[^'\n']s",Arr);    
 
-    iRet = strlenCapital(Arr);    //strlenCapital(100)
+    iRet = strlenCapitalX(Arr);    // strlenX(100);
 
-    printf("Length of Capital Letters string is : %d \n",iRet);
-
+    printf("Number of capital letters are : %d\n",iRet);
     return 0;
 }

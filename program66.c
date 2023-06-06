@@ -1,15 +1,10 @@
-
 #include<stdio.h>
 
-
-//  Avarage of Digits in number..
-
-float DigitsAvarage(int iNo)
+float DigitsAverage(int iNo)
 {
-    float fAvg = 0.0f;
-    int iDigit =0;
-    int iSum =0;
-    int iCnt =0;
+    int iDigit = 0;
+    int iSum = 0;
+    int iCount = 0;
 
     if(iNo < 0)
     {
@@ -20,29 +15,23 @@ float DigitsAvarage(int iNo)
     {
         iDigit = iNo % 10;
         iSum = iSum + iDigit;
-        iNo = iNo/10;
-        iCnt++;
+        iCount++;
+        iNo = iNo / 10;
     }
-
-    fAvg = iSum / iCnt;
-
-    // return fAvg;
-    return (float)((float)iSum / (float)iCnt);  //
-
+    return ((float)iSum / (float)iCount);
 }
-
 
 int main()
 {
-    int iValue=0;
-    float fRet=0;
+    int iValue = 0;
+    float fRet = 0.0f;
 
-    printf("Enter Number:\n");
+    printf("Enter number : \n");
     scanf("%d",&iValue);
 
-     fRet= DigitsAvarage(iValue);
+   fRet = DigitsAverage(iValue);
 
-     printf("Avarage is %f",fRet);
+   printf("Average of digits is : %f\n",fRet);
 
     return 0;
 }

@@ -21,7 +21,7 @@ bool CheckPerfect(int iNo)
     if(iSum == iNo)
     {
         return true;
-    } 
+    }
     else
     {
         return false;

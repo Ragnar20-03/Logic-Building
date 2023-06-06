@@ -1,44 +1,42 @@
-//  Smallest Digits in Number;
 #include<stdio.h>
 
-int SmallDigit(int iNo)
+int MinimumDigit(int iNo)
 {
-    int iSno=9;
-    int iDigit =0;
+    int iDigit = 0;
+    int iMin = 9;
 
-        if(iNo < 0)
-        {
-            iNo = -iNo;
-        }
+    if(iNo < 0)
+    {
+        iNo = -iNo;
+    }
 
     while(iNo != 0)
     {
         iDigit = iNo % 10;
-        iNo = iNo / 10;
-        if(iDigit < iSno)
-        {            
-            iSno = iDigit;
+        if(iDigit < iMin)
+        {
+            iMin = iDigit;
         }
-        if(iSno == 0)
+        if(iMin == 0)
         {
             break;
         }
+        iNo = iNo / 10;
     }
-
-    return iSno;
+    return iMin;
 }
 
 int main()
 {
-    int iValue=0;
-    int iRet=0;
+    int iValue = 0;
+    int iRet = 0;
 
-    printf("Enter Number : \n");
+    printf("Enter number : \n");
     scanf("%d",&iValue);
 
-    iRet = SmallDigit(iValue);
+   iRet = MinimumDigit(iValue);
 
-    printf("%d is Smallest Digit \n",iRet);
+    printf("Smallest digit is %d\n",iRet);
 
     return 0;
 }

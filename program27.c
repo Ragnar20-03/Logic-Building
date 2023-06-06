@@ -1,8 +1,6 @@
 #include<stdio.h>
 #include<stdbool.h>
 
-// Perfect Numbers-> Addition of Factors of the numbers is equal to given number.. 
-
 int SumFactors(int iNo)
 {
     int iCnt = 0;

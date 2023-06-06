@@ -1,30 +1,28 @@
 #include<stdio.h>
 
-
-//  Replace 'Small ' with its Capital Letter  
-
-void strUprX( char *str )
+void struprX(char *str)
 {
-  while(*str != '\0')
-  {
-    if ((*str >= 'a') && (*str <= 'z'))
+    while(*str != '\0')
     {
-        *str = *str - 32;
+        if((*str >= 'a') && (*str <= 'z'))
+        {
+            *str = *str - 32;
+        }
+        
+        str++;
     }
-      str++;
-  }
 }
 
 int main()
 {
     char Arr[20];
 
-    printf("Enter String : \n");
-    scanf("%[^'\n']s" , Arr);
+    printf("Enter string : \n");
+    scanf("%[^'\n']s",Arr);
 
-     strUprX( Arr );
+    struprX(Arr);
 
-     printf("String After Editing is : %s\n",Arr);
+    printf("String after editing is : %s\n",Arr);
 
     return 0;
 }

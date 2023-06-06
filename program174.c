@@ -1,18 +1,16 @@
 #include<stdio.h>
 #define ERR_NOTFOUND -1
 
-
-int LastOccurence( char *str , char cValue)
+int LastOccurance(char *str, char cValue)
 {
     int iCnt = 1;
     int iPos = ERR_NOTFOUND;
 
-    while (*str != '\0')
+    while(*str != '\0')
     {
         if(*str == cValue)
         {
             iPos = iCnt;
-            
         }
         str++;
         iCnt++;
@@ -26,21 +24,20 @@ int main()
     char ch = '\0';
     int iRet = 0;
 
-    printf("Enter String : \n");
-    scanf("%[^'\n']s" , Arr);
+    printf("Enter string : \n");
+    scanf("%[^'\n']s",Arr);
 
-    printf("Enter the Character :\n");
+    printf("Enter the chracter : \n");
     scanf(" %c",&ch);
 
-    iRet = LastOccurence( Arr , ch);
-
+    iRet = LastOccurance(Arr,ch);
     if(iRet == ERR_NOTFOUND)
     {
-        printf("Ther is No such Character \n");
+        printf("There is no such character\n");
     }
     else
     {
-        printf("Last ocuurence of that character is %d :\n",iRet);
+        printf("Last ocuurance of that character is at : %d\n",iRet);
     }
 
     return 0;

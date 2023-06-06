@@ -1,37 +1,35 @@
 #include<stdio.h>
 #include<stdbool.h>
 
-
-bool CheckCapital( char cValue )
+bool CheckCapital(char cValue)
 {
-    if((cValue >= 'A') && (cValue<='Z'))
+    if((cValue >= 'A') && (cValue <= 'Z'))
     {
         return true;
     }
-    else{
+    else
+    {
         return false;
     }
 }
 
 int main()
-
 {
     char ch = '\0';
     bool bRet = false;
 
-    printf("Enter Charater : \n");
+    printf("Enter character : \n");
     scanf("%c",&ch);
 
     bRet = CheckCapital(ch);
 
     if(bRet == true)
     {
-        printf("%c is A capital letter\n",ch);
+        printf("%c is a capital letter\n",ch);
     }
     else
     {
-        printf("%c is Not a capital letter\n",ch);
-
+        printf("%c is not a captial letter\n",ch);
     }
 
     return 0;

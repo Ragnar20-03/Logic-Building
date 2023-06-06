@@ -1,8 +1,6 @@
 #include<stdio.h>   // IO
 #include<stdlib.h>  // Memory management
 
-// Additoin of N Numbers
-
 int Addition(int Arr[], int iLength)
 {
     int iSum = 0;

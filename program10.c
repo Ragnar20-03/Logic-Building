@@ -1,14 +1,17 @@
-#include <stdio.h>
+// Display "Jay Ganesh" 5 times on screen
 
-int main (void)
+#include<stdio.h>
+
+// Example of Iteration
+
+int main()
 {
-    int i=0;
-
-//        1      2    3
-    for (i=1; i<=108; i++)
+    int iCnt = 0;
+    //      1          2        3
+    for(iCnt = 1; iCnt <= 5; iCnt++)
     {
-        printf("Jay Ganesh...\n");  //4
+        printf("Jay Ganesh...\n");      // 4
     }
-    printf("%d ",i);
+
     return 0;
 }

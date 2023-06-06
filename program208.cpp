@@ -1,49 +1,47 @@
 #include<iostream>
-
 using namespace std;
 
-class Number {
-
+class Number
+{
     public:
+        int iNo1;
+        int iNo2;
 
-    int iNo1 ; 
-    int iNo2 ;
+        Number(int X, int Y)
+        {
+            iNo1 = X;
+            iNo2 = Y;
+        }
 
-    Number(int x , int y)
-    {
-        iNo1 = x;
-        iNo2 = y;
-    }
-    
-    int Maximum()
-    {
-        if(iNo1 > iNo2)
+        int Maximum()
         {
-            return iNo1;
+            if(iNo1 > iNo2)
+            {
+                return iNo1;
+            }
+            else
+            {
+                return iNo2;
+            }
         }
-        else
-        {
-            return iNo2;
-        }
-    }
 };
 
 int main()
-{
+{   
     int iRet = 0;
-    int iValue1 = 0 , iValue2 = 0;
-    
-    cout<<"Enter First Number"<<"\n";
-    cin >>iValue1;
+    int iValue1 = 0, iValue2 = 0;
 
-    cout<<"Enter Secind Number "<<"\n";
+    cout<<"Enter first number : "<<"\n";
+    cin>>iValue1;
+
+    cout<<"Enter second number : "<<"\n";
     cin>>iValue2;
 
-    Number nobj(iValue1 , iValue2 );
+    Number nobj(iValue1,iValue2);
 
-    iRet = nobj.Maximum();  
+    iRet = nobj.Maximum();
 
-    cout<<"Maximum Number is :"<<iRet<<"\n";
-
+    cout<<"Maximum number is : "<<iRet<<"\n";
+    
     return 0;
 }

@@ -1,18 +1,20 @@
-#include <stdio.h>
+// Display "Jay Ganesh" 5 times on screen
+
+#include<stdio.h>
 
 void Display()
 {
-   
-        printf("HP...\n");
-    
+    int iCnt = 0;
+    //      1          2        3
+    for(iCnt = 1; iCnt <= 5; iCnt++)
+    {
+        printf("Jay Ganesh...\n");      // 4
+    }
 }
 
-int main(void)
+int main()
 {
-     for (int iCnt = 1; iCnt <= 5; iCnt++)
-    {
-        Display();
-    }
-
+    Display();
+    
     return 0;
 }

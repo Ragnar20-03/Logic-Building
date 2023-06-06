@@ -1,23 +1,31 @@
-#include<stdio.h>
+    #include<stdio.h>
 
-void DisplayDigits(int iNo)
-{
-    int iDigit=0;
-    for (; iNo !=0; )
+    void DisplayDigits(int iNo)
     {
-     iDigit = iNo % 10;
-     printf("%d\n", iDigit);
-     iNo = iNo /10;   
+        int iDigit = 0;
+
+        for( ;iNo != 0; )
+        {
+            iDigit = iNo % 10;
+            printf("%d\n",iDigit);
+            iNo = iNo / 10;
+        }
     }
-}
 
-int main()
-{
-    int iValue =0;
-    printf("Enter Number: \n");
-    scanf("%d",&iValue);
+    int main()
+    {
+        int iValue = 0;
 
-    DisplayDigits(iValue);
+        printf("Enter number : \n");
+        scanf("%d",&iValue);
 
-    return 0;
-}
+        DisplayDigits(iValue);
+
+        return 0;
+    }
+
+    // Input : 7854
+    // Output :     4
+    //              5
+    //              8
+    //              7

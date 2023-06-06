@@ -1,16 +1,13 @@
 #include<stdio.h>
 
 int main()
-
 {
     char Arr[20];
 
-    printf("Enter Your Name : \n");
-    scanf("%s",Arr);
-    // Roshan Patil
+    printf("Enter your name : \n");
+    scanf("%s",Arr);    
 
-    printf("Your Name is : %s\n",Arr);
-    // Roshan
+    printf("Your name is : %s\n",Arr);
 
     return 0;
 }

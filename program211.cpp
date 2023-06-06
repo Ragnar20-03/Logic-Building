@@ -1,21 +1,26 @@
 /*
-    iRow = 4 ;
-    iCol = 4;
+    iRow = 4
+    iCol = 4
+
+    *   *   *   *   
+    *   *   *   *   
+    *   *   *   *   
+    *   *   *   *   
+
 */
-
 #include<iostream>
-
 using namespace std;
 
-class Pattern 
+class Pattern
 {
     public:
     int iRow;
     int iCol;
 
-    Pattern( int x, int y){
-        iRow = x;
-        iCol = y;   
+    Pattern(int X, int Y)
+    {
+        iRow = X;
+        iCol = Y;
     }
 
     void Display()
@@ -23,29 +28,30 @@ class Pattern
         int i = 0;
         int j = 0;
 
-        for(i = 1 ; i <= iRow; i++)
+        for(i =1; i<= iRow; i++)
         {
-            for (j=1; j <= iCol; j++)
+            for(j =1; j<= iCol; j++)
             {
                 cout<<"*"<<"\t";
             }
             cout<<"\n";
         }
-
     }
-
 };
+
 int main()
-{
-    int iValue1 = 0; 
-     int iValue2 = 0;
+{   
+    int iNo1 = 0, iNo2 = 0;
 
-     cout << "Enter Number of Rows And Colums : \n";
-     cin>>iValue1>>iValue2;
+    cout<<"Enter number of rows : "<<"\n";
+    cin>>iNo1;
+    
+    cout<<"Enter number of columns : "<<"\n";
+    cin>>iNo2;
 
-     Pattern pobj (iValue1 , iValue2);
+    Pattern pobj(iNo1, iNo2);
 
-     pobj.Display();
- 
+    pobj.Display();
+
     return 0;
 }

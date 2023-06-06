@@ -2,22 +2,18 @@
 #include<stdlib.h>
 #include<stdbool.h>
 
-// Dont uSe this Logic(segmentation Fault)....
+// Avoid this logic (Segmentation Fault)
+bool Search(int Arr[], int iLength, int iNo)
+{
+    int iCnt = 0;
 
-bool Search(int Arr[] , int iLength, int iNo){
-
-    int iCnt =0;
-
-
-    for(iCnt = 0 ;iCnt < iLength ; iCnt ++)
+    for(iCnt = 0; iCnt < iLength; iCnt++)
     {
         if(Arr[iCnt] == iNo)
         {
-
             break;
         }
     }
-
     if(Arr[iCnt] == iNo)
     {
         return true;
@@ -30,54 +26,42 @@ bool Search(int Arr[] , int iLength, int iNo){
 
 int main()
 {
-    int iSize =0;
-    int *ptr =NULL;
-    int iValue =0;
-    int iCnt =0;
+    int iSize = 0;
+    int *ptr = NULL;
+    int iCnt = 0, iValue = 0;
     bool bRet = false;
 
+    printf("Enter number of elements : \n");
+    scanf("%d",&iSize);    
 
-    printf("Enter Number of Elements..\n");
-    scanf("%d",&iSize);
+    ptr = (int *)malloc(iSize * sizeof(int));
 
-    ptr = (int *) malloc(iSize * sizeof(int));
-
-    if(ptr == NULL)
-    {
-        printf("Unable to Allocate Memoty..\n");
-        return -1;
-
-    }
-
-
-    printf("Enter the number of elements..\n");
-    for (iCnt =0; iCnt < iSize ; iCnt ++)
+    printf("Enter the elements : \n");
+    for(iCnt = 0; iCnt < iSize; iCnt++)
     {
         scanf("%d",&ptr[iCnt]);
     }
 
-    printf("Enter the Element that you want to search..\n");
+    printf("Enter the element that you want to search : \n");
     scanf("%d",&iValue);
 
-    printf("ELements are .. \n");
-
-    for (iCnt =0; iCnt < iSize ; iCnt ++)
+    printf("Elements of the arry are : \n");
+    for(iCnt = 0; iCnt < iSize; iCnt++)
     {
         printf("%d\n",ptr[iCnt]);
     }
-    
-   bRet= Search(ptr , iSize , iValue);
 
-   if(bRet == true)
-   {
-    printf("%d is Present in Array\n",iValue);
-   }
-   else
-   {
-    printf("%d is Not Present in Array\n",iValue);
-   }
-
+    bRet = Search(ptr, iSize, iValue);
+    if(bRet == true)
+    {
+        printf("%d is present in the array\n",iValue);
+    }
+    else
+    {
+        printf("%d is not present in the array\n",iValue);
+    }
+ 
     free(ptr);
-    
+
     return 0;
 }

@@ -1,34 +1,30 @@
 #include<stdio.h>
 
-// count of White Spaces in String...
-
-int strlenSpace(char *str)
+int CountSpace(char *str)
 {
     int iCount = 0;
-    while(*str !=  '\0'){
 
-        if((*str ==  ' ') )
+    while(*str != '\0')
+    {
+        if(*str == ' ')
         {
             iCount++;
         }
-            str++;
-
+        str++;
     }
-
     return iCount;
 }
 
 int main()
 {
-    char Arr[10];
+    char Arr[20];
     int iRet = 0;
 
-    printf("Enter String : \n");
-    scanf("%[^'\n]s",Arr);
+    printf("Enter string : \n");
+    scanf("%[^'\n']s",Arr);    
 
-    iRet = strlenSpace(Arr);    //strlenSpace(100)
+    iRet = CountSpace(Arr);    // strlenX(100);
 
-    printf("Count of WhiteSpaces is  : %d \n",iRet);
-
+    printf("Number of white spaces are : %d\n",iRet);
     return 0;
 }

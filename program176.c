@@ -1,30 +1,27 @@
 #include<stdio.h>
 
-
-//  Replace '_' instead of WhiteSpace' ' 
-
-void EditString( char *str )
+void EditString(char *str)
 {
-  while(*str != '\0')
-  {
-    if (*str == ' ')
+    while(*str != '\0')
     {
-        *str = '_';
+        if(*str == ' ')
+        {
+            *str = '_';
+        }
+        str++;
     }
-  str++;
-  }
 }
 
 int main()
 {
     char Arr[20];
 
-    printf("Enter String : \n");
-    scanf("%[^'\n']s" , Arr);
+    printf("Enter string : \n");
+    scanf("%[^'\n']s",Arr);
 
-     EditString( Arr );
+    EditString(Arr);
 
-     printf("String After Editing is : %s\n",Arr);
+    printf("String after editing is : %s\n",Arr);
 
     return 0;
 }

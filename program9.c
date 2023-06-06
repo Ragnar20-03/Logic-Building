@@ -1,12 +1,16 @@
-#include <stdio.h>
+// Display "Jay Ganesh" 5 times on screen
 
-int main (void)
+#include<stdio.h>
+
+// Example of Sequance
+
+int main()
 {
-    int i=0;
-    
-    for (i=0; i<108; i++)
-    {
-        printf("Jay Ganesh...\n");
-    }
+    printf("Jay Ganesh...\n");
+    printf("Jay Ganesh...\n");
+    printf("Jay Ganesh...\n");
+    printf("Jay Ganesh...\n");
+    printf("Jay Ganesh...\n");
+
     return 0;
 }

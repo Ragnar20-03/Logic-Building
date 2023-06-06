@@ -1,14 +1,11 @@
 #include<stdio.h>
 
-// What if ? cariable is not Found
-// Solution -> 172.c
-
-int FirstOccurence( char *str , char cValue)
+int FirstOccurance(char *str, char cValue)
 {
     int iCnt = 1;
     int iPos = 0;
 
-    while (*str != '\0')
+    while(*str != '\0')
     {
         if(*str == cValue)
         {
@@ -27,15 +24,15 @@ int main()
     char ch = '\0';
     int iRet = 0;
 
-    printf("Enter String : \n");
-    scanf("%[^'\n']s" , Arr);
+    printf("Enter string : \n");
+    scanf("%[^'\n']s",Arr);
 
-    printf("Enter the Character :\n");
+    printf("Enter the chracter : \n");
     scanf(" %c",&ch);
 
-    iRet = FirstOccurence( Arr , ch);
+    iRet = FirstOccurance(Arr,ch);
 
-    printf("First ocuurence of that character is %d :\n",iRet);
+    printf("First ocuurance of that character is at : %d\n",iRet);
 
     return 0;
 }

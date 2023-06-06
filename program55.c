@@ -1,47 +1,47 @@
 #include<stdio.h>
 #include<stdbool.h>
 
-
-// Find Requested Digit in Number...
-bool CheckDigits(int iNo)
+bool CheckDigit(int iNo)
 {
-    int iDigit=0;
-    bool bRet = false;
+    int iDigit = 0;
 
-    while(iNo !=0)
+    while(iNo != 0)
     {
-     iDigit = iNo % 10;
-    
-            if(iDigit == 8)
-            {
-                break;
-            }
-    
-     iNo = iNo /10;   
+        iDigit = iNo % 10;
+        if(iDigit == 8)
+        {
+            break;
+        }
+        iNo = iNo / 10;
     }
-    printf("%d\n",iNo);
-    return true;
     
+    if(iNo == 0)
+    {
+        return false;
+    }
+    else
+    {
+        return true;
+    }
 }
 
 int main()
 {
+    int iValue = 0;
     bool bRet = false;
-    int iValue =0;
-    printf("Enter Number: \n");
+
+    printf("Enter number : \n");
     scanf("%d",&iValue);
 
-    bRet=CheckDigits(iValue);
-
+    bRet = CheckDigit(iValue);
     if(bRet == true)
     {
-        printf("Digit preset in Number\n");
+        printf("Digit 8 is present in number\n");
     }
     else
     {
-        printf("Digit is Not preset in Number\n");
+        printf("Digit 8 is not present in number\n");
     }
-
 
     return 0;
 }

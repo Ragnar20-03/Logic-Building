@@ -1,37 +1,32 @@
 #include<stdio.h>
-#include<stdbool.h>
 
-
-// Find Requested Digit in Number...
-bool CountDigitFrequency(int iNo)
+int CountDigitFrequency(int iNo)
 {
-    int iDigit=0;
-    int iCnt =0;
+    int iDigit = 0;
+    int iCount = 0;
 
-    while(iNo !=0)
+    while(iNo != 0)
     {
-     iDigit = iNo % 10;
-    
-            if(iDigit == 8)
-            {
-              iCnt++;
-            }
-    
-     iNo = iNo /10;   
+        iDigit = iNo % 10;
+        if(iDigit == 8)
+        {
+            iCount++;
+        }
+        iNo = iNo / 10;
     }
-    return iCnt;
-    
+    return iCount;
 }
 
 int main()
 {
+    int iValue = 0;
     int iRet = 0;
-    int iValue =0;
-    printf("Enter Number: \n");
+
+    printf("Enter number : \n");
     scanf("%d",&iValue);
 
-    iRet=CountDigitFrequency(iValue);
-    printf("%d is Frequency",iRet);
+    iRet = CountDigitFrequency(iValue);
+    printf("Frequency of 8 is : %d\n",iRet);
 
     return 0;
 }

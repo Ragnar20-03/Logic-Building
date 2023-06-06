@@ -1,5 +1,4 @@
 #include<stdio.h>
-//  Summation of Programs With Updator
 
 int SumFactors(int iNo)
 {

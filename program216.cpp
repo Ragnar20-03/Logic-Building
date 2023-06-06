@@ -1,5 +1,4 @@
 #include<iostream>
-
 using namespace std;
 
 class Digit
@@ -7,20 +6,20 @@ class Digit
     public:
         int iNo;
 
-    Digit( int X)
+    Digit(int X)
     {
         iNo = X;
     }
 };
 
 int main()
-{
+{   
     int iValue = 0;
 
-    cout<<"Enter Number : \n";
+    cout<<"Enter number : "<<"\n";
     cin>>iValue;
 
-    Digit dobj (iValue);
-
+    Digit dobj(iValue);
+    
     return 0;
 }

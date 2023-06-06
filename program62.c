@@ -1,42 +1,37 @@
 #include<stdio.h>
-#include<stdbool.h>
 
-
-// Find the Even Digit Frequency
-int CheckEvenDigit(int iNo)
-{
-    int iDigit=0;
-    int iCnt =0;
+int CountOddDigit(int iNo)
+{   
+    int iCount = 0;
+    int iDigit = 0;
 
     if(iNo < 0)
     {
         iNo = -iNo;
     }
-
-    while(iNo !=0)
+    while(iNo != 0)
     {
-     iDigit = iNo % 10;
-    
-            if(iDigit % 2 !=0 )
-            {
-              iCnt++;
-            }
-    
-     iNo = iNo /10;   
+        iDigit = iNo % 10;
+        if((iDigit % 2) != 0)
+        {
+            iCount++;
+        }
+        iNo = iNo / 10;
     }
-    return iCnt;
-    
+    return iCount;
 }
 
 int main()
 {
+    int iValue = 0;
     int iRet = 0;
-    int iValue =0;
-    printf("Enter Number: \n");
+
+    printf("Enter number : \n");
     scanf("%d",&iValue);
 
-    iRet=CheckEvenDigit(iValue);
-    printf("Total Odd Numbers Are %d",iRet);
+    iRet = CountOddDigit(iValue);
+
+    printf("Frequency of Odd digits in %d is %d \n",iValue,iRet);
 
     return 0;
 }

@@ -1,25 +1,22 @@
 #include<stdio.h>
 #include<stdbool.h>
 
-//  Check Palindrome String..
-//  With Flag
-
-bool chkPalindrome(char * str)
+bool CheckPallindrome(char *str)
 {
-   char *start = NULL;
-   char *end   = NULL;
-   bool bFlag = true;
+    char *start = NULL;
+    char *end = NULL;
+    bool bFlag = true;
 
-   start = str;
-   end = str;
+    start = str;
+    end = str;
 
     while(*end != '\0')
     {
-        end ++;
+        end++;
     }
-    end --;
+    end--;
 
-    while (start < end)
+    while(start < end)
     {
         if(*start != *end)
         {
@@ -35,20 +32,20 @@ bool chkPalindrome(char * str)
 int main()
 {
     char Arr[20];
-    bool bRet = false;;
+    bool bRet = false;
 
-    printf("Enter String : \n");
-    scanf("%[^'\n']s" , Arr);
+    printf("Enter string : \n");
+    scanf("%[^'\n']s",Arr);
 
-    bRet = chkPalindrome(Arr);
+    bRet = CheckPallindrome(Arr);
 
     if(bRet == true)
     {
-        printf("String is PalinDrome ..\n");
+        printf("String is pallindrome\n");
     }
     else
     {
-        printf("String is Not PalinDrome ..\n");
+        printf("String is not pallindrome\n");
     }
 
     return 0;

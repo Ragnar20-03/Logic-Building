@@ -2,14 +2,17 @@
 
 void Display()
 {
-    for (int iCnt=1;iCnt <=5; iCnt++)
+    int iCnt = 0;
+
+    for(iCnt = 1; iCnt <= 5; iCnt++)
     {
         printf("%d\n",iCnt);
     }
-}  
+}
 
-int main(void)
+int main()
 {
     Display();
+
     return 0;
 }

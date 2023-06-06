@@ -1,53 +1,59 @@
+
 #include<iostream>
-
 using namespace std;
-
 
 class Array
 {
     public:
-
         int iSize;
         int *Arr;
 
         Array(int iNo)
         {
+            cout<<"Inside constructor"<<"\n";
             iSize = iNo;
-            Arr = new int [iSize];
+            Arr = new int[iSize];
         }
 
         ~Array()
         {
+            cout<<"Inside destructor"<<"\n";
             delete []Arr;
         }
-
+        
         void Accept()
         {
-            cout<<"Enter Elements : \n";
+            cout<<"Inside Accept method"<<"\n";         
+
+            cout<<"Enter the elements : "<<"\n";
 
             int iCnt = 0;
-            for (iCnt = 0; iCnt < iSize ; iCnt++)
+            for(iCnt = 0; iCnt < iSize; iCnt++)
             {
-                cin >> Arr[iCnt];
+                cin>>Arr[iCnt];
             }
         }
+
         void Display()
         {
-            cout<<" Elements of Array are  : \n";
+            cout<<"Inside Display method"<<"\n";         
 
+            cout<<"Elements of the array are : "<<"\n";
+            
             int iCnt = 0;
-            for (iCnt = 0; iCnt < iSize ; iCnt++)
+            for(iCnt = 0; iCnt < iSize; iCnt++)
             {
-                cout <<Arr[iCnt]<<"\n";
+                cout<<Arr[iCnt]<<"\n";
             }
         }
 
         int Summation()
         {
+            cout<<"Inside Summation method"<<"\n";         
+
             int iSum = 0;
             int iCnt = 0;
-
-            for(iCnt = 0; iCnt < iSize ; iCnt++)
+            for(iCnt = 0; iCnt < iSize; iCnt++)
             {
                 iSum = iSum + Arr[iCnt];
             }
@@ -56,20 +62,22 @@ class Array
 };
 
 int main()
-{
-    int iValue = 0;
+{   
+    cout<<"Inside main"<<"\n";
+    
+    int iNo = 0;
     int iRet = 0;
 
-    cout<<"Enter the Size of Array : \n";
-    cin >>iValue;
+    cout<<"Enter number of elements : "<<"\n";
+    cin>>iNo;
 
-    Array aobj (iValue);
-
+    Array aobj(iNo);
     aobj.Accept();
     aobj.Display();
+    
     iRet = aobj.Summation();
 
-    cout<<"Summation of Array Elements are : "<<iRet<<"\n";
+    cout<<"Summation is : "<<iRet<<"\n";
 
     return 0;
 }

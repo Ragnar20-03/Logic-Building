@@ -1,29 +1,26 @@
 #include<stdio.h>
 
-
-// Coppy Reverse  string into Another  
-
-void strcpyReverse( char *src , char *dest)
+void strcpyrevX(char *src, char *dest)
 {
-    int iCnt = 0;
     int iLength = 0;
-    while (*src != '\0')
+
+    while(*src != '\0')
     {
-       iLength++;
-       src++;
+        src++;
+        iLength++;
     }
-        src--;   // Because *src will points to end of array;
+
+    src--;
 
     while(iLength != 0)
     {
         *dest = *src;
         src--;
-
         dest++;
         iLength--;
     }
-    *dest = '\0';
 
+    *dest = '\0';
 }
 
 int main()
@@ -31,12 +28,12 @@ int main()
     char Arr[20];
     char Brr[20];
 
-    printf("Enter String : \n");
-    scanf("%[^'\n']s" , Arr);
+    printf("Enter string : \n");
+    scanf("%[^'\n']s",Arr);
 
-     strcpyReverse( Arr , Brr );
+    strcpyrevX(Arr,Brr);
 
-     printf("String After Editing Coppy is : %s\n",Brr);
+    printf("String after copy is : %s\n",Brr);
 
     return 0;
 }

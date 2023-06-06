@@ -1,8 +1,5 @@
 #include<stdio.h>
 
-// Addition of Factors Of Numbers..  
-
-
 int SumFactors(int iNo)
 {
     int iCnt = 0;
