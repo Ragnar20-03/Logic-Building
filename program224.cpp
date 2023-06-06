@@ -2,7 +2,7 @@
     Bitwise AND             &
     Bitwise OR              |
     Bitwise XOR             ^
-    Bitwise NOT             ~
+    Bitwise NOT             ~       (Unary Operator)
 
     Bitwise Left shift      <<
     Bitwise Right shift     >>
