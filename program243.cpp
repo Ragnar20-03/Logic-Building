@@ -1,6 +1,8 @@
 #include<iostream>
 using namespace std;
 
+//  Accept 2 numbers and check weather it is on or off
+
 typedef unsigned int UINT;
 
 bool CheckBit(UINT iNo, UINT iPos1 , UINT iPos2)

@@ -21,7 +21,7 @@
     -----------------------------------
 
     & If both operands are 1 then result is 1 otherwise its 0
-    | If any of the operand is 1 then result is 1 otherwise its 0
+    | If any of the operand is 1 then result is 1 otherwise its 0 
     ^ If both the operands are diffrent then result is 1 otherwise its 0
     ~ If operand is 1 then result is 0, if operand is 0 then result is 1
 
