@@ -5,7 +5,7 @@ void DisplayBinary(int iNo)
 {
     int iDigit = 0;
 
-    cout<<"Binary conversion if : "<<iNo<<"is : "<<"\n";
+    cout<<"Binary conversion of : "<<iNo<<"is : "<<"\n";
 
     while(iNo != 0)
     {
