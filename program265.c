@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-// Delete
+// Delete LAst()
 
 typedef struct Node{
     int data ; 
@@ -102,6 +102,8 @@ void DeleteFirst (PPNODE Head )
 
 void DeleteLast (PPNODE Head )
 {
+    PNODE temp = *Head;
+
     if (*Head == NULL)      //LL is Empty
     {
         return;
@@ -112,9 +114,15 @@ void DeleteLast (PPNODE Head )
         free ( *Head );
         *Head = NULL;
     }
+
     else        // LL contains more than One Node
     {
-        
+        while ( temp -> next -> next != NULL)    //Type 3 While LOOP
+        {
+            temp = temp -> next;
+        }
+        free (temp -> next);
+        temp-> next = NULL;
     }
 }
 
@@ -146,6 +154,12 @@ int main()
     DeleteFirst ( &First);
     DeleteFirst ( &First);
     Display ( First ); 
+    
+    iRet = Count( First );
+    printf("Number of Nodes Are : %d \n",iRet ); 
+
+    DeleteLast ( &First );
+     Display ( First ); 
     
     iRet = Count( First );
     printf("Number of Nodes Are : %d \n",iRet ); 
