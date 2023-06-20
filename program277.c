@@ -7,6 +7,19 @@ typedef struct Node {
     struct Node * next;
 }NODE , *PNODE , **PPNODE;
 
+
+int Count ( PNODE Head )
+{
+    int iCount = 0;
+      while ( Head != NULL)
+    {
+     iCount ++;       
+    Head = Head -> next;
+    }
+    return iCount;
+}
+
+
 void InsertFirst ( PPNODE Head , int No)
 {
     PNODE newn = NULL;
@@ -57,9 +70,39 @@ void InsertLast ( PPNODE Head , int No)
     }
 }
 
-void InsertAtPos ( PPNODE Head , int No)
+void InsertAtPos ( PPNODE Head , int No , int Pos)
 {
+    int iLength = Count(*Head );
+        if (( Pos < 1) || (Pos > iLength + 1) )
+        {
+            printf("Invalide Position .. \n");
+            return;
+        }
+    
+    if ( Pos == 1)
+    {
+        InsertFirst( Head , No );
+    }
+    else if ( Pos == iLength + 1)
+    {
+        InsertLast( Head , No );
+    }
+    else
+    {
+        PNODE newn = (PNODE) malloc ( sizeof(NODE));
+            newn -> prev = NULL;
+            newn -> data = No;
+            newn -> next = NULL;
         
+        PNODE temp = *Head;
+        for (int iCnt = 1; iCnt < Pos -1 ; iCnt ++)
+        {
+            temp = temp -> next;
+        }
+        newn -> next = temp -> next;
+        temp -> next = newn;
+        newn -> prev = temp;
+    }
 }
 
 void DeleteFirst ( PPNODE Head )
@@ -110,17 +153,6 @@ void DeleteAtPos ( PPNODE Head )
     
 }
 
-int Count ( PNODE Head )
-{
-    int iCount = 0;
-      while ( Head != NULL)
-    {
-     iCount ++;       
-    Head = Head -> next;
-    }
-    return iCount;
-}
-
 void Display ( PNODE Head)
 {
     printf("Elements of Linkde List are : ... \n");
@@ -148,6 +180,8 @@ int main()
 
     InsertLast ( &First , 111);
     InsertLast ( &First , 121);
+
+    // InsertAtPos ( &First , 899 , 3);
 
     Display( First );
 
