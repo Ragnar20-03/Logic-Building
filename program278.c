@@ -70,6 +70,40 @@ void InsertLast ( PPNODE Head , int No)
     }
 }
 
+void InsertAtPos ( PPNODE Head , int No , int Pos)
+{
+    int iLength = Count(*Head );
+        if (( Pos < 1) || (Pos > iLength + 1) )
+        {
+            printf("Invalide Position .. \n");
+            return;
+        }
+    
+    if ( Pos == 1)
+    {
+        InsertFirst( Head , No );
+    }
+    else if ( Pos == iLength + 1)
+    {
+        InsertLast( Head , No );
+    }
+    else
+    {
+        PNODE newn = (PNODE) malloc ( sizeof(NODE));
+            newn -> prev = NULL;
+            newn -> data = No;
+            newn -> next = NULL;
+        
+        PNODE temp = *Head;
+        for (int iCnt = 1; iCnt < Pos -1 ; iCnt ++)
+        {
+            temp = temp -> next;
+        }
+        newn -> next = temp -> next;
+        temp -> next = newn;
+        newn -> prev = temp;
+    }
+}
 
 void DeleteFirst ( PPNODE Head )
 {
@@ -114,45 +148,35 @@ void DeleteLast ( PPNODE Head )
 
 }
 
-void DeleteAtiPos ( PPNODE Head )
-{
-    
-}
-
-void InsertAtiPos ( PPNODE Head , int No , int iPos)
+void DeleteAtPos ( PPNODE Head , int Pos )
 {
     int iLength = Count(*Head );
-        if (( iPos < 1) || (iPos > iLength + 1) )
+        if (( Pos < 1) || (Pos > iLength + 1) )
         {
-            printf("Invalid iPosition .. \n");
+            printf("Invalide Position .. \n");
             return;
         }
     
-    if ( iPos == 1)
+    if ( Pos == 1)
     {
-        InsertFirst( Head , No );
+        DeleteFirst( Head  );
     }
-    else if ( iPos == iLength + 1)
+    else if ( Pos == iLength + 1)
     {
-        InsertLast( Head , No );
+        DeleteLast( Head );
     }
     else
-    {
-        PNODE newn = (PNODE) malloc ( sizeof(NODE));
-            newn -> prev = NULL;
-            newn -> data = No;
-            newn -> next = NULL;
-        
+    {   
         PNODE temp = *Head;
-        for (int iCnt = 1; iCnt < iPos -1 ; iCnt ++)
+        for (int iCnt = 1; iCnt < Pos -1 ; iCnt ++)
         {
             temp = temp -> next;
         }
-        newn -> next = temp -> next;
-        temp -> next = newn;
-        newn -> prev = temp;
+        temp -> next = temp -> next -> next;
+        free (temp -> next -> prev);
     }
 }
+
 void Display ( PNODE Head)
 {
     printf("Elements of Linkde List are : ... \n");
@@ -181,14 +205,17 @@ int main()
     InsertLast ( &First , 111);
     InsertLast ( &First , 121);
 
-    // InsertAtiPos ( &First , 899 , 3);
+    InsertAtPos ( &First , 899 , 3);
 
     Display( First );
 
-    DeleteFirst (&First);
-    DeleteLast (&First);
+    DeleteAtPos(&First , 3);
+
+    // DeleteFirst (&First);
+    // DeleteLast (&First);
 
     Display(First);
+
 
     return 0;
 }
