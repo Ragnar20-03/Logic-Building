@@ -46,7 +46,14 @@ void InsertLast ( PPNODE Head , int No)
     }
     else // LL contains at least one Node;
     {
-        
+        PNODE temp = *Head ; 
+        while ( temp -> next != NULL)
+        {
+            temp = temp -> next;
+        }
+        temp -> next = newn;
+        newn -> prev = temp;  //#
+
     }
 }
 
@@ -103,6 +110,11 @@ int main()
     InsertFirst ( &First , 51);
     InsertFirst ( &First , 21);
     InsertFirst ( &First , 11);
+
+    Display( First );
+
+    InsertLast ( &First , 111);
+    InsertLast ( &First , 121);
 
     Display( First );
 
