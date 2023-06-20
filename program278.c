@@ -139,8 +139,8 @@ void DeleteAtPos ( PPNODE Head , int Pos )
             temp = temp -> next;
         }
         temp -> next = temp -> next -> next;
-        free (temp -> next -> prev);
-        temp -> next -> temp;
+        free (temp -> next -> prev); //#
+        temp -> next ->prev =  temp; //#
     }
 }
 void InsertAtPos ( PPNODE Head , int No , int Pos)
