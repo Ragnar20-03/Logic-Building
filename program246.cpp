@@ -1,17 +1,14 @@
 #include<iostream>
 using namespace std;
 
-//  Accept 1 numbers and toggle the bit hardCoded Value 7
-
 typedef unsigned int UINT;
 
-UINT OffBit(UINT iNo)
+UINT ToggleBit(UINT iNo)
 {
     UINT iMask = 0X00000040;
-    
     return (iNo ^ iMask);
-
 }
+
 int main()
 {
     UINT iValue = 0;
@@ -21,7 +18,6 @@ int main()
     cin>>iValue;
 
     iRet = OffBit(iValue);
-
     cout<<"Result is : "<<iRet<<"\n";
 
     return 0;
@@ -31,11 +27,10 @@ int main()
 
     iPos = 7
 
-    iNo   0    1   1   1    0   1   0    0
-          0    1   0   0    0   0   0    0
-        ----------------------------------------
-          0    0   1   1    0   1   0    0      
-
-
-
+    iNo        0   0   1   1   0   1   0   0 
+               0   1   0   0   0   0   0   0        ^
+-----------------------------------------------------
+               0   0   1   1   0   1   0   0
 */
+
+

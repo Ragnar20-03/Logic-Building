@@ -1,83 +1,81 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+typedef struct Node
+{
+    int data;
+    struct Node *next;
+}NODE, *PNODE, **PPNODE;
 
-typedef struct Node{
-    int data ; 
-    struct Node * next;
-} NODE, *PNODE , **PPNODE;
+// 1 : Allocate memory for new node
+// 2 : Initalise the node
+// 3 : check whether LL is empty of not
+// 4 : If LL is emprty store address of newnode in First
+// 5 : Otherwise store the address of newnode inside next pointer of old first node
+// 6 : Update First pointer with the address of new node
 
-
-
-
-//  1 : Allocate Memory for New Node (newn)
-//  2 : Initialllize The Node
-//  3 : Check Weathe LL is Empty or Not
-//  4 : if Empty store Address of New Node (newn) in First
-//  5 : OtherWise store the Address of New Node (newn) inside next pointer of old First Node
-//  6 : Update First Pointer with the Address of New Node;
-void InsertFirst(PPNODE Head , int No)
+void InsertFirst(PPNODE Head, int no)
 {
     PNODE newn = NULL;
-    newn = (PNODE) malloc(sizeof(NODE)); // 1
+    newn = (PNODE)malloc(sizeof(NODE));         // 1
 
-    newn -> data = No;
-    newn -> next = NULL; // 2
+    newn->data = no;                            // 2
+    newn->next = NULL;
 
-    if( *Head == NULL)   // 3
+    if(*Head == NULL)                           // 3
     {
-        *Head = newn;    // 4
-    }
-    else                    
-    {
-        newn -> next = *Head;   // 5
-        *Head = newn;           // 6
-    }
-}
-
-
-void InsertLast (PPNODE Head , int No)
-{
-    PNODE temp = *Head;
-
-    PNODE newn = NULL;
-    newn = (PNODE) malloc(sizeof(NODE));  //1
-
-    newn -> next = NULL;
-    newn -> data = No;                  //2
-
-    if(*Head == NULL)           //3
-    {
-        *Head = newn;           //4
+        *Head = newn;                           // 4
     }
     else
     {
-        while (temp -> next != NULL)
-        {
-            temp = temp -> next;
-        }
-        temp -> next = newn;
+        newn->next = *Head;                     // 5
+        *Head = newn;                           // 6
     }
 }
 
-void Display ( PNODE Head)
+void InsertLast(PPNODE Head, int no)
 {
-    printf("Elements of Linked List Are : \n");
-    while ( Head != NULL)
+    PNODE newn = NULL;
+    newn = (PNODE)malloc(sizeof(NODE));         // 1
+
+    PNODE temp = *Head;
+
+    newn->data = no;                            // 2
+    newn->next = NULL;
+
+    if(*Head == NULL)                           // 3
     {
-        printf(" : %d : -> ",Head->data);
+        *Head = newn;                           // 4
+    }
+    else
+    {
+        while(temp -> next != NULL)
+        {
+            temp = temp -> next;
+        }
+        temp->next = newn;
+    }
+}
+
+void Display(PNODE Head)
+{
+    printf("Elements of LinkedList are : \n");
+
+    while(Head != NULL)
+    {
+        printf("| %d | -> ",Head->data);
         Head = Head -> next;
     }
     printf("NULL \n");
 }
 
-int Count ( PNODE Head)
+int Count(PNODE Head)
 {
     int iCount = 0;
 
-    while( Head != NULL)
+    while(Head != NULL)
     {
-        iCount ++;
+        iCount++;
         Head = Head -> next;
     }
     return iCount;
@@ -85,27 +83,26 @@ int Count ( PNODE Head)
 
 int main()
 {
+    PNODE First = NULL;
     int iRet = 0;
 
-    PNODE First = NULL;
+    InsertLast(&First, 11);
+    InsertLast(&First, 21);
+    InsertLast(&First, 51);
+    InsertLast(&First, 101);
 
-    InsertLast(&First , 11);
-    InsertLast(&First , 21);
-    InsertLast(&First , 51);
-    InsertLast(&First , 101);
+    Display(First);
 
-    Display ( First ); 
-    
-    iRet = Count( First );
-    printf("Number of Nodes Are : %d \n",iRet ); 
+    iRet = Count(First);
+    printf("Number of nodes are : %d\n",iRet);
 
-    InsertFirst( &First , 10);
-    InsertFirst( &First , 20);
-    
-    Display ( First ); 
-    
-    iRet = Count( First );
-    printf("Number of Nodes Are : %d \n",iRet ); 
+    InsertFirst(&First,10);
+    InsertFirst(&First,20);
+
+    Display(First);
+
+    iRet = Count(First);
+    printf("Number of nodes are : %d\n",iRet);
 
     return 0;
 }
