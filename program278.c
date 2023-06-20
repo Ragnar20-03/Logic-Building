@@ -70,40 +70,6 @@ void InsertLast ( PPNODE Head , int No)
     }
 }
 
-void InsertAtPos ( PPNODE Head , int No , int Pos)
-{
-    int iLength = Count(*Head );
-        if (( Pos < 1) || (Pos > iLength + 1) )
-        {
-            printf("Invalide Position .. \n");
-            return;
-        }
-    
-    if ( Pos == 1)
-    {
-        InsertFirst( Head , No );
-    }
-    else if ( Pos == iLength + 1)
-    {
-        InsertLast( Head , No );
-    }
-    else
-    {
-        PNODE newn = (PNODE) malloc ( sizeof(NODE));
-            newn -> prev = NULL;
-            newn -> data = No;
-            newn -> next = NULL;
-        
-        PNODE temp = *Head;
-        for (int iCnt = 1; iCnt < Pos -1 ; iCnt ++)
-        {
-            temp = temp -> next;
-        }
-        newn -> next = temp -> next;
-        temp -> next = newn;
-        newn -> prev = temp;
-    }
-}
 
 void DeleteFirst ( PPNODE Head )
 {
@@ -151,7 +117,7 @@ void DeleteLast ( PPNODE Head )
 void DeleteAtPos ( PPNODE Head , int Pos )
 {
     int iLength = Count(*Head );
-        if (( Pos < 1) || (Pos > iLength + 1) )
+        if (( Pos < 1) || (Pos > iLength ) )
         {
             printf("Invalide Position .. \n");
             return;
@@ -174,8 +140,46 @@ void DeleteAtPos ( PPNODE Head , int Pos )
         }
         temp -> next = temp -> next -> next;
         free (temp -> next -> prev);
+        temp -> next -> temp;
     }
 }
+void InsertAtPos ( PPNODE Head , int No , int Pos)
+{
+    int iLength = Count(*Head );
+        if (( Pos < 1) || (Pos > iLength + 1) )
+        {
+            printf("Invalide Position .. \n");
+            return;
+        }
+    
+    if ( Pos == 1)
+    {
+        InsertFirst( Head , No );
+    }
+    else if ( Pos == iLength + 1)
+    {
+        InsertLast( Head , No );
+    }
+    else
+    {
+        PNODE newn = (PNODE) malloc ( sizeof(NODE));
+            newn -> prev = NULL;
+            newn -> data = No;
+            newn -> next = NULL;
+        
+        PNODE temp = *Head;
+        for (int iCnt = 1; iCnt < Pos -1 ; iCnt ++)
+        {
+            temp = temp -> next;
+         }
+        newn -> next = temp -> next; //1
+        temp -> next -> prev = newn; //# //2
+
+        temp -> next = newn; //3
+        newn -> prev = temp;   //4 //#
+    }
+}
+
 
 void Display ( PNODE Head)
 {

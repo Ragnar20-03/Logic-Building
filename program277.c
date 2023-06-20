@@ -148,9 +148,11 @@ void InsertAtiPos ( PPNODE Head , int No , int iPos)
         {
             temp = temp -> next;
         }
-        newn -> next = temp -> next;
-        temp -> next = newn;
-        newn -> prev = temp;
+        newn -> next = temp -> next; //1
+        temp -> next -> prev = newn; //# //2
+
+        temp -> next = newn; //3
+        newn -> prev = temp;   //4 //#
     }
 }
 void Display ( PNODE Head)
@@ -181,7 +183,7 @@ int main()
     InsertLast ( &First , 111);
     InsertLast ( &First , 121);
 
-    // InsertAtiPos ( &First , 899 , 3);
+    InsertAtiPos ( &First , 55 , 4);
 
     Display( First );
 
