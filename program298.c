@@ -8,9 +8,47 @@ typedef struct Node
     struct Node * next ;
 }NODE , *PNODE , ** PPNODE;
 
+
+int Count ( PNODE Head , PNODE Tail)
+{
+    int iCount = 0;
+    if ( (Head != NULL) && (Tail != NULL))
+    {
+        do 
+        {
+            iCount ++;
+            Head = Head -> next;
+        }while(Head != Tail -> next);
+        return iCount;
+    }
+    else
+    {
+        return 0;
+    }
+}
+void Display ( PNODE Head , PNODE Tail)
+{
+    int iRet = 0;
+        iRet = Count ( Head , Tail);
+    if ( (Head != NULL) && (Tail != NULL))
+    {
+        do 
+        {
+            printf(" %d : " , Head -> data);
+            Head = Head -> next;
+        }while(Head != Tail -> next);
+        printf("\n");
+    }
+    else
+    {
+        printf("Linked List is Empty..  \n");
+    }
+    printf("Number of Nodes  Is : %d \n", iRet);
+} 
+
 void InsertFirst ( PPNODE Head , PPNODE Tail , int No)
 {
-    PNODE newn = NULL:
+    PNODE newn = NULL;
         newn = (PNODE) malloc (sizeof (NODE));
         newn -> prev = NULL;
         newn -> data = No;
@@ -22,16 +60,16 @@ void InsertFirst ( PPNODE Head , PPNODE Tail , int No)
         *Tail = newn;
     }
     else
-    {
-        newn -> next = *Head;
-        *Head -> prev = newn;
+    {;
+        (*Head )-> prev = newn;
 
         *Head = newn;
     }
     (*Head) -> prev = *Tail;
-    (*Tail) -> next = *Head
+    (*Tail) -> next = *Head;
 
 }
+        newn -> next = *Head;
 void InsertLast( PPNODE Head , PPNODE Tail , int No )
 {
     PNODE newn = NULL:
@@ -53,7 +91,7 @@ void InsertLast( PPNODE Head , PPNODE Tail , int No )
         *Tail = *Tail -> next ; //*Tail = newn;
     }
     (*Head) -> prev = *Tail;
-    (*Tail) -> next = *Head
+    (*Tail) -> next = *Head;
 }
 void InsertAtPos ( PPNODE Head , PPNODE Tail , int No , int iPos)
 [
@@ -72,20 +110,23 @@ void DeleteAtPos ( PPNODE Head , PPNODE Tail ,  int iPos)
     
 }
 
-void Display ( PNODE Head , PNODE Tail)
-{
 
-} 
-int Count ( PNODE Head , PNODE Tail)
-{
 
-    return 0;
-}
 
 int main()
 {
     PNODE First = NULL;
     PNODE Last = NULL;
+
+    InsertFirst ( &First , &Last , 51);
+    InsertFirst ( &First , &Last , 21);
+    InsertFirst ( &First , &Last , 11);
+
+    InsertLast ( &First , &Last , 101);
+    InsertFirst ( &First , &Last , 111);
+    InsertFirst ( &First , &Last , 121);
+
+    Display ( First , Last);
 
     return 0;
 }
