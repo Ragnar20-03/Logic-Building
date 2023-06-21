@@ -7,6 +7,46 @@ typedef struct Node
     struct Node * next ;
 }NODE, * PNODE, ** PPNODE;
 
+int Count ( PNODE Head , PNODE Tail)
+{
+    int iCount = 0;
+    if ((Head != NULL) && ( Tail != NULL))
+    {
+        do 
+        {
+            iCount ++;
+            Head = Head -> next;
+        }while(Head != Tail -> next);
+        return iCount;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+
+void Display ( PNODE Head , PNODE Tail)
+{
+    int iRet = 0;
+    iRet = Count(Head , Tail);
+    if ((Head != NULL) && ( Tail != NULL))
+    {
+        do 
+        {
+            printf(" %d : ", Head -> data);
+            Head = Head -> next;
+        }while(Head != Tail -> next);
+        printf("\n ");
+    }
+    else
+    {
+        printf("Linked List is Empty !!\n");
+    }
+    printf("Number of Nodes is : %d \n" , iRet);
+}
+
+
 void InsertFirst ( PPNODE Head , PPNODE Tail , int No)
 {
     PNODE newn = NULL;
@@ -49,10 +89,7 @@ void InsertLast ( PPNODE Head , PPNODE Tail , int No)
 
 }
 
-void InsertAtPos ( PPNODE Head , PPNODE Tail , int No , int iPos)
-{
-    
-}
+
 
 void DeleteFirst ( PPNODE Head , PPNODE Tail )
 {
@@ -101,46 +138,61 @@ void DeleteLast ( PPNODE Head , PPNODE Tail )
 
 void DeleteAtPos ( PPNODE Head , PPNODE Tail , int iPos ) 
 {
-    
-}
-
-int Count ( PNODE Head , PNODE Tail)
-{
-    int iCount = 0;
-    if ((Head != NULL) && ( Tail != NULL))
+    int iLength = Count ( *Head , *Tail);
+    if ( (iPos < 0) || ( iPos > iPos    ))
     {
-        do 
-        {
-            iCount ++;
-            Head = Head -> next;
-        }while(Head != Tail -> next);
-        return iCount;
+        printf ( "Invalid Position");
+        return ;
+    }
+    if ( iPos == 1)
+    {
+        DeleteFirst ( Head , Tail ) ;
+    }
+    else if ( iPos == iLength + 1)
+    {
+        DeleteLast( Head , Tail );
     }
     else
     {
-        return 0;
-    }
+        PNODE temp = *Head ;
+        for (int iCnt = 1 ; iCnt < iPos -1 ; iCnt ++)
+        {
+            temp = temp -> next;
+        }
+
+    }   
 }
 
-
-void Display ( PNODE Head , PNODE Tail)
+void InsertAtPos ( PPNODE Head , PPNODE Tail , int No , int iPos)
 {
-    int iRet = 0;
-    iRet = Count(Head , Tail);
-    if ((Head != NULL) && ( Tail != NULL))
+    int iLength = Count ( *Head , *Tail);
+    if ( (iPos < 0) || ( iPos > iPos + 1))
     {
-        do 
-        {
-            printf(" %d : ", Head -> data);
-            Head = Head -> next;
-        }while(Head != Tail -> next);
-        printf("\n ");
+        printf ( "Invalid Position");
+        return ;
+    }
+    if ( iPos == 1)
+    {
+        InsertFirst ( Head , Tail , No) ;
+    }
+    else if ( iPos == iLength + 1)
+    {
+        InsertLast( Head , Tail , No);
     }
     else
     {
-        printf("Linked List is Empty !!\n");
+        PNODE newn = (PNODE) malloc (sizeof(NODE));
+            newn -> data = No;
+            newn -> next = NULL;
+
+        PNODE temp = *Head ;
+        for (int iCnt = 1 ; iCnt < iPos -1 ; iCnt ++)
+        {
+            temp = temp -> next;
+        }
+        newn -> next = temp -> next;
+        temp -> next = newn;
     }
-    printf("Number of Nodes is : %d \n" , iRet);
 }
 
 int main()
