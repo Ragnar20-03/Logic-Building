@@ -159,6 +159,9 @@ void DeleteAtPos ( PPNODE Head , PPNODE Tail , int iPos )
         {
             temp = temp -> next;
         }
+        PNODE tempX = temp -> next;
+        temp -> next = temp -> next -> next;
+        free(tempX);
 
     }   
 }
