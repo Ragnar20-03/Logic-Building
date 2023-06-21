@@ -80,6 +80,10 @@ void Display ( PNODE Head , PNODE Tail)
         }while(Head != Tail -> next);
         printf("\n ");
     }
+    else
+    {
+        printf("Linked List is Empty !!\n");
+    }
 }
 int Count ( PNODE Head , PNODE Tail)
 {
