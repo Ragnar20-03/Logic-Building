@@ -56,7 +56,18 @@ void InsertAtPos ( PPNODE Head , PPNODE Tail , int No , int iPos)
 
 void DeleteFirst ( PPNODE Head , PPNODE Tail )
 {
-    
+    if ( (*Head == NULL) && (*Tail == NULL))
+    {
+
+    }   
+    else if ( *Head == *Tail )
+    {
+        
+    }
+    else
+    {
+
+    }
 }
 
 void DeleteLast ( PPNODE Head , PPNODE Tail )
