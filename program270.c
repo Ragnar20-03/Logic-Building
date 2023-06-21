@@ -1,110 +1,43 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-typedef struct Node {
-    struct Node * prev;   //#
-    int data ;
-    struct Node * next;
-}NODE , *PNODE , **PPNODE;
-
-void InsertFirst ( PPNODE Head , int No)
+typedef struct Node
 {
-    PNODE newn = NULL;
+    int data;
+    struct Node *next;
+    struct Node *prev;      // #
+}NODE, *PNODE, **PPNODE;
 
-        newn = (PNODE)malloc ( sizeof(NODE));
-        newn -> prev = NULL;  //#
-        newn -> data = No;
-        newn -> next = NULL;
-
-    if ( *Head == NULL)  //LL is empty
-    {
-        *Head = newn;
-
-    }
-    else // LL contains at least one Node;
-    {
-        (*Head )-> prev = newn;  //#
-        newn -> next = *Head;
-        *Head = newn;
-    }
+void InsertFirst(PPNODE Head, int No)
+{
+    // CODE
 }
 
-void InsertLast ( PPNODE Head , int No)
+void InsertLast(PPNODE Head, int No)
+{}
+
+void InsertAtPos(PPNODE Head, int No, int iPos)
+{}
+
+void DeleteFirst(PPNODE Head)
+{}
+
+void DeleteLast(PPNODE Head)
+{}
+
+void DeleteAtPos(PPNODE Head, int iPos)
+{}
+
+void Display(PNODE Head)
+{}
+
+int Count(PNODE Head)
 {
-    PNODE newn = NULL;
-
-        newn = (PNODE)malloc ( sizeof(NODE));
-    
-        newn -> prev = NULL;  //#
-        newn -> data = No;
-        newn -> next = NULL;
-
-    if ( *Head == NULL)  //LL is empty
-    {
-        *Head = newn;
-
-    }
-    else // LL contains at least one Node;
-    {
-        
-    }
-}
-
-void InsertAtPos ( PPNODE Head , int No)
-{
-    
-}
-
-void DeleteFirst ( PPNODE Head )
-{
-
-}
-
-void DeleteLast ( PPNODE Head )
-{
-
-}
-
-void DeleteAtPos ( PPNODE Head )
-{
-    
-}
-
-int Count ( PNODE Head )
-{
-    int iCount = 0;
-      while ( Head != NULL)
-    {
-     iCount ++;       
-    Head = Head -> next;
-    }
-    return iCount;
-}
-
-void Display ( PNODE Head)
-{
-    printf("Elements of Linkde List are : ... \n");
-    printf("|| NULL <=>");
-    while ( Head != NULL)
-    {
-        printf(" %d <=> ", Head -> data);
-        Head = Head -> next;
-    }
-    printf("NULL ||");
-
-    printf("\n");
+    return 0;
 }
 
 int main()
 {
     PNODE First = NULL;
-
-    InsertFirst ( &First , 101);
-    InsertFirst ( &First , 51);
-    InsertFirst ( &First , 21);
-    InsertFirst ( &First , 11);
-
-    Display( First );
-
     return 0;
 }

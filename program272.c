@@ -63,7 +63,17 @@ void DeleteAtPos(PPNODE Head, int iPos)
 {}
 
 void Display(PNODE Head)
-{}
+{
+    printf("Elements of Linked List are : \n");
+
+    printf("NULL <=> ");
+    while(Head != NULL)
+    {
+        printf("| %d | <=> ",Head->data);
+        Head = Head -> next;
+    }
+    printf("NULL \n");
+}
 
 int Count(PNODE Head)
 {

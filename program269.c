@@ -1,15 +1,16 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-typedef struct Node {
-    struct Node * prev;   //#
-    int data ;
-    struct node * next;
-}NODE , *PNODE , **PPNODE;
+typedef struct Node
+{
+    int data;
+    struct Node *next;
+    struct Node *prev;      // #
+}NODE, *PNODE, **PPNODE;
 
 int main()
 {
-    PNODE First = NULL:
+    PNODE First = NULL;
 
     return 0;
 }

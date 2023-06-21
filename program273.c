@@ -63,15 +63,46 @@ void DeleteAtPos(PPNODE Head, int iPos)
 {}
 
 void Display(PNODE Head)
-{}
+{
+    printf("Elements of Linked List are : \n");
+
+    printf("NULL <=> ");
+    while(Head != NULL)
+    {
+        printf("| %d | <=> ",Head->data);
+        Head = Head -> next;
+    }
+    printf("NULL \n");
+}
 
 int Count(PNODE Head)
 {
-    return 0;
+    int iCount = 0;
+
+    while(Head != NULL)
+    {
+        iCount++;
+        Head = Head -> next;
+    }
+
+    return iCount;
 }
 
 int main()
 {
     PNODE First = NULL;
+
+    int iRet = 0;
+
+    InsertFirst(&First,101);
+    InsertFirst(&First,51);
+    InsertFirst(&First,21);        
+    InsertFirst(&First,11);
+
+    iRet = Count(First);
+    printf("Number of elements are : %d\n",iRet);
+
+    Display(First);
+    
     return 0;
 }
