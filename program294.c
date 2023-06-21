@@ -217,6 +217,10 @@ int main()
 
     Display(First ,Last);
 
+    DeleteAtPos ( &First , &Last , 4);
+
+    Display(First ,Last);
+
     DeleteFirst ( &First , &Last);
     DeleteLast( &First , &Last);
 
