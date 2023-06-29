@@ -29,7 +29,7 @@ class SinglyLL
         void InsertAtPos   ( int No , int iPos);
 
         void DeleteFirst  ( );
-        void Deletelast   ( );
+        void DeleteLast   ( );
         void DeleteAtPos  ( int iPos );
 
         void Display ( );
@@ -87,12 +87,18 @@ int SinglyLL :: Count ( )
 
 SinglyLL :: SinglyLL ()
 {
-    
+    cout<<"Inside Constructor \n";
+
+    _First = NULL;               //Constuctor;
+    _iCount = 0;
 }
 
 int main ()
 {      
-    SinglyLL obj1 ;
+    SinglyLL obj1;
+    SinglyLL obj2;
+
+    // cout<<"Size of Linked list is : "<<obj1._iCount; // ERROR
 
     return 0;
 }
