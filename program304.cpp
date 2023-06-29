@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-// int iCount  :; 
+// int iCount  , characteristics private :; 
 
 typedef struct  Node
 {
@@ -12,14 +12,14 @@ typedef struct  Node
 
 class SinglyLL
 { 
-    public : 
+    private : 
       
       PNODE First ;  //Characteristics;
       int iCount ;   // Charactrictics;
 
     public :
       
-        SinglyLL ();
+     SinglyLL ();
 
         void InsertFirst ( int No);
         void InsertLast  ( int No);
@@ -33,6 +33,9 @@ class SinglyLL
         int Count ( );
 
 };
+
+// Implementations of all Behaviours;
+
 
 int main ()
 {      

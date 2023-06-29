@@ -1,7 +1,10 @@
+// Implementations of all Behaviours;
 #include<iostream>
 using namespace std;
 
-// int iCount  :; 
+// int iCount  , characteristics private :; 
+// Implementations of all Behaviours;
+
 
 typedef struct  Node
 {
@@ -12,14 +15,14 @@ typedef struct  Node
 
 class SinglyLL
 { 
-    public : 
+    private : 
       
       PNODE First ;  //Characteristics;
       int iCount ;   // Charactrictics;
 
     public :
       
-        SinglyLL ();
+     SinglyLL ();
 
         void InsertFirst ( int No);
         void InsertLast  ( int No);
@@ -33,6 +36,15 @@ class SinglyLL
         int Count ( );
 
 };
+
+// Implementations of all Behaviours;
+/*
+    Return_Value Class_Name :: Function_Name ( Parameter_List)
+    {
+        Function_Body;
+    }
+*/
+
 
 int main ()
 {      
