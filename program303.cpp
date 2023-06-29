@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-// 1st Approach
+// int iCount ; 
 
 typedef struct  Node
 {
@@ -14,6 +14,7 @@ class SinglyLL
 { 
     public : 
       PNODE First ;  //Characteristics;
+      int iCount ;   // Charactrictics;
 
         SinglyLL ();
 
@@ -23,7 +24,7 @@ class SinglyLL
 
         void DeleteFirst  ( );
         void Deletelast   ( );
-        void DeleteAtPos  ( );
+        void DeleteAtPos  ( int iPos );
 
         void Display ( );
         int Count ( );
@@ -32,7 +33,7 @@ class SinglyLL
 
 int main ()
 {      
-
+    SinglyLL obj1 ();
 
     return 0;
 }
