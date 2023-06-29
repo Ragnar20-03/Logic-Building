@@ -47,12 +47,46 @@ class SinglyLL
 
 void SinglyLL :: InsertFirst ( int No)
 {
+    PNODE newn = NULL;
+        newn = new NODE; // newn = (PNODE) malloc (sizeof ( NODE ));
+    
+    newn -> data = No;
+    newn -> next = NULL;
 
+    if ( _First == NULL) // OR ( iCount == 0)/  / LL is empty;
+    {
+        _First = newn ;
+    }
+    else   // LL Contains One Node At Least;
+    {
+        newn -> next = _First ; 
+        _First = newn;
+    }
+    _iCount ++;
 }
 
 void SinglyLL :: InsertLast ( int No)
 {
+    PNODE newn = NULL;
+        newn = new NODE; // newn = (PNODE) malloc (sizeof ( NODE ));
+    
+    newn -> data = No;
+    newn -> next = NULL;
 
+    if ( _First == NULL) // OR ( iCount == 0)/  / LL is empty;
+    {
+        _First = newn ;
+    }
+    else   // LL Contains One Node At Least;
+    {
+        PNODE temp = _First ;
+        while ( temp -> next != NULL)
+        {
+            temp = temp -> next;
+        }
+        temp -> next = newn ;
+    }
+    _iCount ++;
 }
 
 void SinglyLL :: InsertAtPos ( int No , int iPos)
