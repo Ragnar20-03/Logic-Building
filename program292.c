@@ -1,120 +1,138 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-typedef struct Node 
+typedef struct Node
 {
     int data;
-    struct Node * next ;
-}NODE, * PNODE, ** PPNODE;
+    struct Node *next;
+}NODE, *PNODE, **PPNODE;
 
-void InsertFirst ( PPNODE Head , PPNODE Tail , int No)
+void InsertFirst(PPNODE Head, PPNODE Tail, int No)
 {
     PNODE newn = NULL;
-        newn = (PNODE) malloc ( sizeof(NODE));
-        newn -> data = No;
-        newn -> next = NULL;
     
-    if ( (*Head == NULL) && (*Tail == NULL)) //LL is Empty
+    newn = (PNODE)malloc(sizeof(NODE));
+
+    newn->data = No;
+    newn->next = NULL;
+
+    if((*Head == NULL) && (*Tail == NULL))  // LL is empty
     {
         *Head = newn;
         *Tail = newn;
     }
-    else // LL Contains at Least One Node
+    else        // LL contains atleast one node
     {
-        newn -> next = *Head ;
+        newn->next = *Head;
         *Head = newn;
     }
-      (*Tail) -> next = *Head;
-
+    (*Tail)->next = *Head;
 }
 
-void InsertLast ( PPNODE Head , PPNODE Tail , int No)
+void InsertLast(PPNODE Head, PPNODE Tail, int No)
 {
-    PNODE newn = NULL;
-        newn = (PNODE) malloc ( sizeof(NODE));
-        newn -> data = No;
-        newn -> next = NULL;
+        PNODE newn = NULL;
     
-    if ( (*Head == NULL) && (*Tail == NULL)) //LL is Empty
+    newn = (PNODE)malloc(sizeof(NODE));
+
+    newn->data = No;
+    newn->next = NULL;
+
+    if((*Head == NULL) && (*Tail == NULL))  // LL is empty
     {
         *Head = newn;
         *Tail = newn;
     }
-    else // LL Contains at Least One Node
+    else        // LL contains atleast one node
     {
-        (*Tail) -> next = newn;
-        (*Tail) = (*Tail) -> next; // *tail = newn;
+        (*Tail)->next = newn;
+        (*Tail) = (*Tail) -> next;
     }
-        (*Tail) -> next = *Head;
-
+    (*Tail)->next = *Head;
 }
 
-void InsertAtPos ( PPNODE Head , PPNODE Tail , int No , int iPos)
+void InsertAtPos(PPNODE Head, PPNODE Tail, int No, int iPos)
+{}
+
+void DeleteFirst(PPNODE Head, PPNODE Tail)
 {
+    if((*Head == NULL) && (*Tail == NULL))        // A
+    {
+        return;
+    }
+    else if(*Head == *Tail)       // B
+    {
+        free(*Head);
+        *Head = NULL;
+        *Tail = NULL;
+    }
+    else        // C
+    {
+        *Head = (*Head) -> next;
+        free((*Tail)->next);
+        (*Tail)->next = *Head;
+    }
+}
+
+void DeleteLast(PPNODE Head, PPNODE Tail)
+{
+    PNODE temp = *Head;
     
-}
-
-void DeleteFirst ( PPNODE Head , PPNODE Tail )
-{
-    if ( (*Head == NULL) && (*Tail == NULL))
+    if((*Head == NULL) && (*Tail == NULL))        // A
     {
-        return ;
-    }   
-    else if ( *Head == *Tail )
-    {
-            free ( *Head);
-            *Head = NULL;
-            *Tail = NULL;
+        return;
     }
-    else
+    else if(*Head == *Tail)       // B
     {
-        *Head = (*Head ) -> next;
-        free ( (*Tail) -> next );
-        (*Tail )-> next  = *Head ; 
+        free(*Head);
+        *Head = NULL;
+        *Tail = NULL;
     }
-}
-
-void DeleteLast ( PPNODE Head , PPNODE Tail )
-{
-    if ( (*Head == NULL) && (*Tail == NULL))
+    else        // C
     {
-        return ;
-    }   
-    else if ( *Head == *Tail )
-    {
-            free ( *Head);
-            *Head = NULL;
-            *Tail = NULL;
-    }
-    else
-    {
-        PNODE temp = *Head ;
-        while ( temp -> next != *Tail)
+        while(temp->next != *Tail)
         {
-            temp = temp -> next;
+		    temp = temp->next;
         }
-        free ( *Tail);
+
+        free(*Tail);
         *Tail = temp;
-        (*Tail) -> next = *Head;
+        (*Tail)->next = *Head;
     }
 }
 
-void DeleteAtPos ( PPNODE Head , PPNODE Tail , int iPos ) 
-{
-    
-}
+void DeleteAtPos(PPNODE Head, PPNODE Tail,int iPos)
+{}
 
-int Count ( PNODE Head , PNODE Tail)
+void Display(PNODE Head, PNODE Tail)
+{
+    if(Head != NULL && Tail != NULL)
+    {
+        do
+        {
+            printf("| %d | -> ",Head->data);
+            Head = Head -> next;
+        }while(Head != Tail->next);
+        
+        printf("\n");
+    }
+    else
+    {
+        printf("Linked List is empty\n");
+    }
+}
+int Count(PNODE Head, PNODE Tail)
 {
     int iCount = 0;
-    if ((Head != NULL) && ( Tail != NULL))
+
+    if(Head != NULL && Tail != NULL)
     {
-        do 
+        do
         {
-            iCount ++;
+            iCount++;
             Head = Head -> next;
-        }while(Head != Tail -> next);
-        return iCount;
+        }while(Head != Tail->next);
+        return iCount;        
     }
     else
     {
@@ -122,47 +140,33 @@ int Count ( PNODE Head , PNODE Tail)
     }
 }
 
-
-void Display ( PNODE Head , PNODE Tail)
-{
-    int iRet = 0;
-    iRet = Count(Head , Tail);
-    if ((Head != NULL) && ( Tail != NULL))
-    {
-        do 
-        {
-            printf(" %d : ", Head -> data);
-            Head = Head -> next;
-        }while(Head != Tail -> next);
-        printf("\n ");
-    }
-    else
-    {
-        printf("Linked List is Empty !!\n");
-    }
-    printf("Number of Nodes is : %d \n" , iRet);
-}
-
 int main()
 {
     PNODE First = NULL;
-    PNODE Last = NULL;      //#
+    PNODE Last = NULL;          // #
 
-    InsertFirst ( &First , &Last , 51);
-    InsertFirst ( &First , &Last , 21);
-    InsertFirst ( &First , &Last , 11);
+    int iRet = 0;
 
-    InsertLast ( &First , &Last , 101);
-    InsertLast ( &First , &Last , 111);
-    InsertLast ( &First , &Last , 121);
+    InsertFirst(&First,&Last,51);
+    InsertFirst(&First,&Last,21);
+    InsertFirst(&First,&Last,11);
 
-    Display(First ,Last);
+    InsertLast(&First,&Last,101);
+    InsertLast(&First,&Last,111);
+    InsertLast(&First,&Last,121);
 
-    DeleteFirst ( &First , &Last);
-    DeleteLast( &First , &Last);
+    Display(First,Last);
+    iRet = Count(First,Last);
 
-    Display ( First , Last);
+    printf("Number of nodes are : %d\n",iRet);
+
+    DeleteFirst(&First,&Last);
+    DeleteLast(&First,&Last);
     
+    Display(First,Last);
+    iRet = Count(First,Last);
+
+    printf("Number of nodes are : %d\n",iRet);
 
     return 0;
 }

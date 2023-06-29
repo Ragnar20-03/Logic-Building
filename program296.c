@@ -1,45 +1,29 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-typedef struct Node 
+typedef struct Node
 {
-    struct Node * prev ;
-    int data ;
-    struct Node * next ;
-}NODE , *PNODE , ** PPNODE;
+    int data;
+    struct Node *next;
+    struct Node *prev;
+}NODE, *PNODE, **PPNODE;
 
-void InsertFirst ( PPNODE Head , PPNODE Tail , int No)
+void InsertFirst(PPNODE Head, PPNODE Tail, int No)
+{}
+void InsertLast(PPNODE Head, PPNODE Tail, int No)
+{}
+void InsertAtPos(PPNODE Head, PPNODE Tail, int No, int iPos)
+{}
+void DeleteFirst(PPNODE Head, PPNODE Tail)
+{}
+void DeleteLast(PPNODE Head, PPNODE Tail)
+{}
+void DeleteAtPos(PPNODE Head, PPNODE Tail,int iPos)
+{}
+void Display(PNODE Head, PNODE Tail)
+{}
+int Count(PNODE Head, PNODE Tail)
 {
-
-}
-void InsertLast( PPNODE Head , PPNODE Tail , int No )
-{
-    
-}
-void InsertAtPos ( PPNODE Head , PPNODE Tail , int No , int iPos)
-[
-    
-]
-void DeleteFirst ( PPNODE Head , PPNODE Tail )
-{
-
-}
-void DeleteLast( PPNODE Head , PPNODE Tail )
-{
-    
-}
-void DeleteAtPos ( PPNODE Head , PPNODE Tail ,  int iPos)
-{
-    
-}
-
-void Display ( PNODE Head , PNODE Tail)
-{
-
-} 
-int Count ( PNODE Head , PNODE Tail)
-{
-
     return 0;
 }
 
