@@ -45,6 +45,11 @@ class SinglyLL
     }
 */
 
+void SinglyLL :: InsertFirst ( int No)
+{
+    
+}
+
 
 int main ()
 {      
