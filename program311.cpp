@@ -2,7 +2,7 @@
 #include<iostream>
 using namespace std;
 
-// Delete First , Last
+// FINAL  Singly Linear Linked list using OOP !!!
 
 typedef struct  Node
 {
