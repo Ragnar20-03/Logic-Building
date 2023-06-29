@@ -111,12 +111,19 @@ void SinglyLL :: DeleteAtPos ( int iPos)
 
 void SinglyLL :: Display ( )
 {
-
+    cout<<"Elements of Linked List are : \n";
+    PNODE temp = _First  ;
+        while ( temp != NULL)
+        {
+            cout<< " : "<<temp -> data<< "  : ";
+            temp = temp -> next;
+        }
+        cout<<" NULL "<<"\n";
 }
 
 int SinglyLL :: Count ( )
 {
-    return 0;
+    return _iCount;
 }
 
 SinglyLL :: SinglyLL ()
@@ -129,10 +136,31 @@ SinglyLL :: SinglyLL ()
 
 int main ()
 {      
+    int iRet = 0;
+
     SinglyLL obj1;
     SinglyLL obj2;
 
-    // cout<<"Size of Linked list is : "<<obj1._iCount; // ERROR
+    obj1.InsertFirst(101);
+    obj1.InsertFirst(51);
+    obj1.InsertFirst(21);
+    obj1.InsertFirst(11);
+
+    obj1.InsertLast ( 89);
+    obj1.InsertLast ( 87);
+    obj1.InsertLast ( 78);
+
+    obj1.Display();
+    iRet = obj1.Count();
+    cout<<"Number of Elements of Linked List is  : " <<iRet<<"\n";
+
+    obj2.InsertFirst ( 20);
+    obj2.InsertFirst ( 10);
+    obj2.InsertLast ( 30);
+
+    obj2.Display();
+    iRet = obj2.Count();
+    cout<<"Number of Elements of Linked List is  : " <<iRet<<"\n";
 
     return 0;
 }
