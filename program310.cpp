@@ -88,11 +88,6 @@ void SinglyLL :: InsertLast ( int No)
     _iCount ++;
 }
 
-void SinglyLL :: InsertAtPos ( int No , int iPos)
-{
-
-}
-
 void SinglyLL :: DeleteFirst ( )
 {
     if ( _First == NULL)  // LL is empty
@@ -137,11 +132,6 @@ void SinglyLL :: DeleteLast ( )
     _iCount --;
 }
 
-void SinglyLL :: DeleteAtPos ( int iPos)
-{
-
-}
-
 void SinglyLL :: Display ( )
 {
     cout<<"Elements of Linked List are : \n";
@@ -170,6 +160,46 @@ SinglyLL :: ~SinglyLL ()
 {
     cout<<"Inside DestruCtor \n";    //Destructor
 }
+
+void SinglyLL :: InsertAtPos ( int No , int iPos)
+{
+// No need to Call Count method because of _iCount Variavle
+        if (( iPos < 1) || ( iPos > _iCount + 1) )
+        {
+            cout<<"InValid Position \n";
+            return ;
+        }
+    if ( iPos == 1)
+    {
+        InsertFirst ( No);
+    }
+    else if ( iPos == _iCount + 1 )
+    {
+        InsertLast ( No);
+    }
+    else 
+    {
+        PNODE temp = _First ; 
+        for ( int iCnt = 1 ; iCnt < iPos -1 ; iCnt ++)
+        {
+            temp = temp -> next;
+        }
+        PNODE newn = new NODE;
+            newn -> data = No;
+            newn -> next = NULL;
+
+        newn -> next = temp -> next;
+        temp -> next = newn ;
+
+        _iCount ++;
+    }
+}
+
+void SinglyLL :: DeleteAtPos ( int iPos)
+{
+
+}
+
 int main ()
 {      
     int iRet = 0;
@@ -184,6 +214,8 @@ int main ()
     obj1.InsertLast ( 89);
     obj1.InsertLast ( 87);
     obj1.InsertLast ( 78);
+
+    obj1.InsertAtPos ( 55 , 4);
 
     obj1.Display();
     iRet = obj1.Count();
