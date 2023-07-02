@@ -1,18 +1,68 @@
 #include<iostream>
 using namespace std;
 
-typedef struct node
+typedef class node
 {
-    int data;
-    struct node *next;
-}NODE, *PNODE, **PPNODE;
+    public:
+        int data;
+        node *next;
+    
+        node()
+        {
+            data = 0;
+            next = NULL;
+        }
 
-class SinglyLL
+        node(int value)
+        {
+            data = value;
+            next = NULL;
+        }
+
+}NODE, *PNODE;
+
+class LinkedList
 {
-    private:
-        PNODE First;        // Characteristics
-        int iCount;         // Chracteristics
+    public:
+        PNODE First;
+        int iCount;
 
+        LinkedList()
+        {
+            First = NULL;
+            iCount = 0;
+        }
+
+        virtual void InsertFirst(int ino) = 0;
+        virtual void InsertLast(int ino) = 0;
+        virtual void InsertAtPos(int ino, int ipos) = 0;
+
+        virtual void DeleteFirst() = 0;
+        virtual void DeleteLast() = 0;
+        virtual void DeleteAtPos(int ipos) = 0;
+
+        void Display()
+        {
+            PNODE temp = First;
+
+            cout<<"Elements of Linked List are : "<<"\n";
+
+            for(int icnt = 1; icnt <= iCount; icnt++)
+            {
+                cout<<"| "<<temp->data<<" |-> ";
+                temp = temp -> next;
+            }
+            cout<<"NULL"<<"\n";
+        }
+
+        int Count()
+        {
+            return iCount;
+        }
+};
+
+class SinglyLL: public LinkedList
+{
     public:
         SinglyLL();
         ~SinglyLL();
@@ -24,19 +74,13 @@ class SinglyLL
         void DeleteFirst();
         void DeleteLast();
         void DeleteAtPos(int ipos);
-
-        void Display();
-        int Count();
 };
 
 void SinglyLL:: InsertFirst(int no)
 {
     PNODE newn = NULL;
 
-    newn = new NODE;    // newn = (PNODE)malloc(sizeof(NODE));
-
-    newn->data = no;
-    newn->next = NULL;
+    newn = new NODE(no);    // newn = (PNODE)malloc(sizeof(NODE));
 
     if(First == NULL)   // LL is empty
     {
@@ -54,10 +98,7 @@ void SinglyLL:: InsertLast(int no)
 {
     PNODE newn = NULL;
 
-    newn = new NODE;    // newn = (PNODE)malloc(sizeof(NODE));
-
-    newn->data = no;
-    newn->next = NULL;
+    newn = new NODE(no);    // newn = (PNODE)malloc(sizeof(NODE));
 
     if(First == NULL)   // LL is empty
     {
@@ -124,25 +165,6 @@ void SinglyLL:: DeleteLast()
     iCount--;
 }
 
-void SinglyLL:: Display()
-{
-    PNODE temp = First;
-
-    cout<<"Elements of Linked list are : "<<"\n";
-
-    while(temp != NULL)
-    {
-        cout<<"| "<<temp->data<<" |->";
-        temp = temp -> next;
-    }
-    cout<<" NULL"<<"\n";
-}
-
-int SinglyLL:: Count()
-{
-    return iCount;
-}
-
 SinglyLL:: SinglyLL()
 {
     cout<<"Inside constructor\n";
@@ -189,9 +211,7 @@ void SinglyLL:: InsertAtPos(int no, int ipos)
             temp = temp -> next;
         }
 
-        PNODE newn = new NODE;
-        newn->data = no;
-        newn->next = NULL;
+        PNODE newn = new NODE(no);    // newn = (PNODE)malloc(sizeof(NODE));
 
         newn->next = temp->next;
         temp->next = newn;
