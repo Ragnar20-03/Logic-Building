@@ -1,6 +1,6 @@
 import java.util.*;
 
-class program326
+class program327
 {
     public static void main(String arg[])
     {
@@ -16,5 +16,7 @@ class program326
         iAns = iNo1 + iNo2;
 
         System.out.println("Addition is : "+iAns);
+
+        sobj.close();
     }
 }
