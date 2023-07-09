@@ -11,7 +11,7 @@ class program366
         System.out.println("Enter String : ");
         String str = sc.nextLine();
 
-        str.toLowerCase();
+        str = str.toLowerCase();
 
         sc.close();
 

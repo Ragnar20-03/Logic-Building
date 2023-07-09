@@ -1,6 +1,8 @@
+//For Each Loop
+
 import java.util.Scanner;
 
-class program365
+class program367
 {
     public static void main(String arg[])
     {
@@ -11,15 +13,17 @@ class program365
 
         str = str.toLowerCase();
 
+        str = str.replaceAll("\\s","");
+
         sc.close();
 
         char Arr[] = str.toCharArray();
         int Freq[] = new int [26];
         int iCnt = 0 ;
 
-        for ( iCnt = 0 ; iCnt < Arr.length ; iCnt ++)
+        for (char ch : Arr)
         {
-            Freq [Arr[iCnt] - 'a']++;
+            Freq [ch - 'a']++;
         }
 
         System.out.println("Frequency of each letter is : ");
