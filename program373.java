@@ -1,7 +1,8 @@
 
+    
 import java.util.Scanner;
 
-class program369
+class program373
 {
     public static void main(String arg[])
     {
@@ -13,16 +14,19 @@ class program369
         str = str.replaceAll("//s+","");
         str = str.trim();
 
-        int iFrequency  = 0 ;
+        int iCount = 0 ;
 
-        for ( int iCnt = 0 ; iCnt <  str.length(); iCnt++)
+        String arr[] = str.split(" ");
+
+        for ( String s : arr)
         {
-            if ( str.charAt(iCnt) == ' ')
+            if (s.equals("India"))
             {
-                iFrequency ++;
+                iCount ++;
             }
         }
 
-        System.out.println("Number of Words are : "+ (iFrequency +1));
+        System.out.println( " Count is : " + iCount);
     }
 } 
+
