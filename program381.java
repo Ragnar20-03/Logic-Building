@@ -24,7 +24,9 @@ class program381
             StringBuffer sb = new StringBuffer (arr[iCnt]);
             output.append(sb.append(" "));
         }
-        System.out.println(output);
-        
+        String strX = new String(output);
+        strX = strX.replaceAll("//s","");
+        strX = strX.trim();        
+        System.out.println(strX);
     } 
 }
