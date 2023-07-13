@@ -6,7 +6,7 @@
 #include<unistd.h>
 // #include<io.h>
 
-#define MAXINODE 50
+#define MAXINODE 50 // #define MAXINODE 5
 
 #define READ 1
 #define WRITE 2
@@ -38,7 +38,7 @@ typedef struct inode{
     int permission;  // 1    23
     struct inode *next;
 }  INODE , * PINODE,**PPINODE; 
-
+//////////////////////////////////////////
 typedef struct filetable
 {
     int readoffset;
@@ -47,16 +47,16 @@ typedef struct filetable
     int mode; // 1  2   3
     PINODE ptrinode;
 }FILETABLE , * PFILETABLE;
-
+////////////////////////////////////////////////////////
 typedef struct ufdt
 {
     PFILETABLE ptrfiletable;
 }UFDT;
-//Global Variables 
+//Global Variables //////////////////
 UFDT UFDTArr[50];
 SUPERBLOCK SUPERBLOCKobj;
 PINODE head = NULL;
-
+// //////////////////////////////////////////////////
 void man(char * name)
 {
     if ( name == NULL) return ;
