@@ -1,95 +1,90 @@
-// Approach Using CharAtMethod();
-//  strLower ; 
-// StrUpper;
-// strToggle;
-
 import java.util.*;
-import java.util.Scanner;
 
-// ///////////// MAIN Class/////////////////////
-
-class program358
+class StringX
 {
-
-    public static  void  main ( String args[] )
+    public String StrLower(String str)
     {
-        Scanner sc = new Scanner (System.in);
+        // Step 1 : Convert String to array
+        char Arr[] = str.toCharArray();
+
+        // Step 2 : Perform operations on array
+        for(int iCnt = 0; iCnt < Arr.length; iCnt++)
+        {
+            if((Arr[iCnt] >= 'A') && (Arr[iCnt] <= 'Z'))
+            {
+                Arr[iCnt] = (char)(Arr[iCnt] + 32);
+            }
+        }
+
+        // Step 3 : Convert array to string
+        String ret = new String(Arr);
+
+        return ret;
+    }
     
-        System.out.print("Enter Full Name : ");
-        String name = sc.nextLine();
+    public String StrUpper(String str)
+    {
+        // Step 1 : Convert String to array
+        char Arr[] = str.toCharArray();
 
-        StringX sobj = new StringX();
+        // Step 2 : Perform operations on array
+        for(int iCnt = 0; iCnt < Arr.length; iCnt++)
+        {
+            if((Arr[iCnt] >= 'a') && (Arr[iCnt] <= 'z'))
+            {
+                Arr[iCnt] = (char)(Arr[iCnt] - 32);
+            }
+        }
 
-        System.out.println("Small String is : " + sobj.strLower(name));
-        System.out.println("Capital String is : " + sobj.strUpper(name));
-        System.out.println("ToggleD String is : " + sobj.strToggle(name));
+        // Step 3 : Convert array to string
+        String ret = new String(Arr);
+
+        return ret;
+    }
+
+    public String StrToggle(String str)
+    {
+        // Step 1 : Convert String to array
+        char Arr[] = str.toCharArray();
+
+        // Step 2 : Perform operations on array
+        for(int iCnt = 0; iCnt < Arr.length; iCnt++)
+        {
+            if((Arr[iCnt] >= 'a') && (Arr[iCnt] <= 'z'))
+            {
+                Arr[iCnt] = (char)(Arr[iCnt] - 32);
+            }
+            else if((Arr[iCnt] >= 'A') && (Arr[iCnt] <= 'Z'))
+            {
+                Arr[iCnt] = (char)(Arr[iCnt] + 32);
+            }
+        }
+
+        // Step 3 : Convert array to string
+        String ret = new String(Arr);
+
+        return ret;
     }
 }
 
+class program358
+{
+    public static void main(String Arg[])
+    {
+        Scanner sobj = new Scanner(System.in);
 
-// Hepler Class //////////////////////////////////////////////////
-////////////////////////////////////////
+        System.out.println("Enter your name : ");
+        String name = sobj.nextLine();
 
-class StringX
-{   
-     public String strLower ( String str)
-     {
-        char cArray[] = str.toCharArray();
+        StringX obj = new StringX();
+        
+        String sret = obj.StrLower(name);
+        System.out.println("Converted string is : "+sret);
 
-        for ( int iCnt = 0 ; iCnt < cArray.length ; iCnt++)
-        {
-            if ( cArray [ iCnt] >= 'A' && cArray [ iCnt] <= 'Z' )
-            {
-                // cArray [ iCnt] = cArray [iCnt] + 32;
-                //Error
-                cArray [iCnt] = (char)(cArray [iCnt] + 32);
-                // cArray [iCnt] += 32; 
-            }
-        }
-         String ret = new String ( cArray);
+        sret = obj.StrUpper(name);
+        System.out.println("Converted string is : "+sret);
 
-         return ret;
-     }  
-     
-    public String strUpper ( String str)
-     {
-        char cArray[] = str.toCharArray();
-
-        for ( int iCnt = 0 ; iCnt < cArray.length ; iCnt++)
-        {
-            if ( cArray [ iCnt] >= 'a' && cArray [ iCnt] <= 'z' )
-            {
-                // cArray [ iCnt] = cArray [iCnt] - 32;
-                //Error
-                cArray [iCnt] = (char)(cArray [iCnt] - 32);
-                // cArray [iCnt] -= 32; 
-            }
-        }
-         String ret = new String ( cArray);
-
-         return ret;
-     }    
-
-    public String strToggle ( String str)
-     {
-        char cArray[] = str.toCharArray();
-
-        for ( int iCnt = 0 ; iCnt < cArray.length ; iCnt++)
-        {
-            if ( cArray [ iCnt] >= 'a' && cArray [ iCnt] <= 'z' )
-            {
-                // cArray [ iCnt] = cArray [iCnt] - 32;
-                //Error
-                cArray [iCnt] = (char)(cArray [iCnt] - 32);
-                // cArray [iCnt] -= 32; 
-            }
-            else if ( cArray [ iCnt] >= 'A' && cArray [ iCnt] <= 'Z' )
-            {
-                cArray [iCnt] = (char)(cArray [iCnt] + 32);
-            }
-        }
-         String ret = new String ( cArray);
-
-         return ret;
-     }         
+        sret = obj.StrToggle(name);
+        System.out.println("Converted string is : "+sret);
+    }
 }

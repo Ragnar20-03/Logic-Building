@@ -1,36 +1,30 @@
-
-    
-import java.util.Scanner;
+import java.util.*;
 
 class program375
 {
     public static void main(String arg[])
     {
-        Scanner sc = new Scanner (System.in);  
+        Scanner sobj = new Scanner(System.in);
 
-        System.out.println("Enter String : ");
-        String str = sc.nextLine();
+        System.out.println("Enter string : ");
+        String str = sobj.nextLine();     
 
-        str = str.replaceAll("//s+","");
+        str = str.replaceAll("\\s+"," ");
         str = str.trim();
-
-        int iCount = 0 ;
 
         String arr[] = str.split(" ");
 
-        System.out.println( " Enter word that you want to seearch");
+        System.out.println("Enter the word that you want to search : ");
+        String Word = sobj.nextLine();
 
-        String Word = sc.nextLine();
-
-        for ( String s : arr)
+        int iFrequency = 0;
+        for(String s : arr)
         {
-            if (s.equals(Word))
+            if(s.equals(Word))
             {
-                iCount ++;
+                iFrequency++;
             }
         }
-
-        System.out.println( " Count is : " + iCount);
+        System.out.println("Frequency of india word is : "+iFrequency);
     }
-} 
-
+}

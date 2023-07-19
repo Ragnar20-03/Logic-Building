@@ -1,31 +1,27 @@
-
-    
-import java.util.Scanner;
+import java.util.*;
 
 class program378
 {
     public static void main(String arg[])
     {
-        Scanner sc = new Scanner (System.in);  
+        Scanner sobj = new Scanner(System.in);
 
-        System.out.println("Enter String : ");
-        String str = sc.nextLine();
+        System.out.println("Enter string : ");
+        String str = sobj.nextLine();     
 
-        str = str.replaceAll("//s+","");
+        str = str.replaceAll("\\s+"," ");
         str = str.trim();
-
 
         String arr[] = str.split(" ");
 
         StringBuffer output = new StringBuffer();
+
         for(String s : arr)
         {
-            StringBuffer Word  = new StringBuffer(s);
-            output.append((Word.reverse()).append(" "));
-            // output.append((Word.reverse())+" ");
-
+            StringBuffer word = new StringBuffer(s);
+            output.append((word.reverse()).append(" "));
         }
-        
-        System.out.println("Result is  : " + output);
-    } 
+
+        System.out.println("Result is : "+output);
+    }
 }

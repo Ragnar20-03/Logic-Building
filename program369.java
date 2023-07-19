@@ -1,28 +1,19 @@
-
-import java.util.Scanner;
+import java.util.*;
 
 class program369
 {
     public static void main(String arg[])
     {
-        Scanner sc = new Scanner (System.in);  
+        Scanner sobj = new Scanner(System.in);
 
-        System.out.println("Enter String : ");
-        String str = sc.nextLine();
+        System.out.println("Enter string : ");
+        String str = sobj.nextLine();
 
-        str = str.replaceAll("//s+","");
+        str = str.replaceAll("\\s+"," ");
+
         str = str.trim();
 
-        int iFrequency  = 0 ;
+        System.out.println("Updated string is : "+str);
 
-        for ( int iCnt = 0 ; iCnt <  str.length(); iCnt++)
-        {
-            if ( str.charAt(iCnt) == ' ')
-            {
-                iFrequency ++;
-            }
-        }
-
-        System.out.println("Number of Words are : "+ (iFrequency +1));
     }
-} 
+}

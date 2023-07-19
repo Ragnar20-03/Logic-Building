@@ -1,67 +1,28 @@
-
-import java.util.Scanner;
+import java.util.*;
 
 class Matrix
 {
     public int Arr[][];
 
-    public Matrix( int i , int j)
+    public Matrix(int i, int j)
     {
-        Arr = new int [i][j];
-    } 
-    public void Accept()
-    {
-
-        Scanner sc = new Scanner(System.in);
-
-        System.out.println("Enter Elements : ");
-
-        for (int i = 0 ; i< Arr.length ; i++)
-        {
-            for ( int j = 0 ; j<Arr[i].length; j++)
-            {
-                Arr[i][j] = sc.nextInt();
-            }
-        }
-    }
-
-    public void Display()
-    {
-
-
-        System.out.println("Elements of Matrix are s : ");
-
-        for (int i = 0 ; i< Arr.length ; i++)
-        {
-            for ( int j = 0 ; j<Arr[i].length; j++)
-            {
-                System.out.print(Arr[i][j] + "\t");
-            }        
-            System.out.println();
-
-        }
+        Arr = new int[i][j];
     }
 }
 
-class program3
+class program387
 {
     public static void main(String arg[])
     {
-        Scanner sc = new Scanner ( System.in);
-        int iRow = 0 ;
-        int iCol = 0 ;
-        System.out.println("Enter Number of Rows ");
-        iRow = sc.nextInt();
-        System.out.println("Enter Number of Coloums ");
-        iCol = sc.nextInt();
+        Scanner sobj = new Scanner(System.in);
+        int iRow = 0, iCol =0;
 
-        Matrix mobj = new Matrix ( iRow , iCol);
+        System.out.println("Enter number of rows");
+        iRow = sobj.nextInt();
 
-        mobj.Accept();
-        mobj.Display();
-
-
-        sc.close();
+        System.out.println("Enter number of columns");
+        iCol = sobj.nextInt();
+        
+        Matrix mobj = new Matrix(iRow,iCol);    // Matrix mobj = new Matrix(3,4);
     }
-} 
-
+}

@@ -1,34 +1,25 @@
-// Remove WhiteSpaces -> 2nd Approach
-
 import java.util.*;
-import java.util.Scanner;
 
-// ///////////// MAIN Class/////////////////////
-
-class program362
+class StringX
 {
-
-    public static  void  main ( String args[] )
+    public String RemoveWhiteSpace(String str)
     {
-        Scanner sc = new Scanner (System.in);
-    
-        System.out.print("Enter Full Name : ");
-        String name = sc.nextLine();
-
-        StringX sobj = new StringX();
-
-        System.out.println("Result String is : " + sobj.RemoveWhiteSpace(name));
+        return str.replaceAll("\\s","");
     }
 }
 
+class program362
+{
+    public static void main(String Arg[])
+    {
+        Scanner sobj = new Scanner(System.in);
 
-// Hepler Class //////////////////////////////////////////////////
-////////////////////////////////////////
+        System.out.println("Enter your name : ");
+        String name = sobj.nextLine();
 
-class StringX
-{     
-     public String RemoveWhiteSpace ( String str)
-     {
-       return str.replaceAll("\\s" , "");  
-     }       
+        StringX obj = new StringX();
+        String sret = obj.RemoveWhiteSpace(name);
+
+        System.out.println("Result is : "+sret);
+    }
 }

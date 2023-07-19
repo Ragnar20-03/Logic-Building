@@ -1,27 +1,21 @@
+import java.util.*;
 
-    // anagrams 
-
-//  str1 : mARVELLOUS           Army
-//  STR2 : osulMalver           Mary
-    
-import java.util.Scanner;
-
-class program385
+class program386
 {
     public static void main(String arg[])
     {
-        Scanner sc = new Scanner (System.in);  
+        Scanner sobj = new Scanner(System.in);
 
-        System.out.println("Enter String : ");
-        String str1 = sc.nextLine();   
+        System.out.println("Enter first string : ");
+        String str1 = sobj.nextLine();
 
-        System.out.println("Enter String : ");
-        String str2 = sc.nextLine();
+        System.out.println("Enter second string : ");
+        String str2 = sobj.nextLine();
 
-        if (str1.length() != str2.length())
+        if(str1.length() != str2.length())
         {
-            System.out.println("Not Anagram");
-            return ;
+            System.out.println("Strings are not anagram");
+            return;
         }
 
         str1 = str1.toLowerCase();
@@ -33,14 +27,15 @@ class program385
         Arrays.sort(Arr);
         Arrays.sort(Brr);
 
-        if (Arrays.equals(Arr , Brr))
+        if(Arrays.equals(Arr,Brr))
         {
-            System.out.println("Strings are Anagram ");
+            System.out.println("Strings are anagram");
         }
         else
         {
-         System.out.println("Strings are Not Anagram ");
+            System.out.println("Strings are not anagram");
         }
-    }
-} 
 
+
+    }
+}

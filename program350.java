@@ -1,20 +1,16 @@
-// Approach Uses Acces SpeciFiers;
-
 import java.util.*;
-import java.util.Scanner;
 
-// ///////////// MAIN Class/////////////////////
-
-class program348
+class program350
 {
-
-    public static  void  main ( String args[] )
+    public static void main(String Arg[])
     {
-           Scanner sobj = new Scanner (System.in);
-        
-            System.out.print("Enter Full Name : ");
-            String name = sobj.nextLine();
-            System.out.println("Enter Full Name is  : " +name );
-            System.out.println("Length of String is   : " +name.length() );
+        Scanner sobj = new Scanner(System.in);
+
+        System.out.println("Enter your name : ");
+        String name = sobj.nextLine();
+
+        System.out.println("Your name is : "+name);
+
+        System.out.println("Length of string is : "+name.length());
     }
 }

@@ -25,9 +25,9 @@ class Digits
         return iPower;
     }
 
-    boolean CheckArmstrong(int iNo)
+    boolean CheckArmstrong(int iNo) // 1634
     {
-        int iCount = 0, iDigit = 0;
+        int iCount = 0, iDigit = 0, iRet = 0;
         iCount = CountDigits(iNo);
 
         int iTemp = iNo;
@@ -36,7 +36,8 @@ class Digits
         while(iNo  != 0)
         {
             iDigit = iNo % 10;
-            iSum = iSum + Power(iDigit, iCount);
+            iRet = Power(iDigit, iCount)
+            iSum = iSum + iRet;
             iNo = iNo / 10;
         }
 
