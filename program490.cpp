@@ -15,7 +15,7 @@ class ArrayX
         ~ArrayX();
         void Accept();
         void Display();
-        void SelectionSort();
+        void InsertionSort();
 };
 
 template <class T>
@@ -51,26 +51,22 @@ void ArrayX <T>:: Display()
     }
     cout<<"\n";
 }
-template< class T>
-void ArrayX <T>::SelectionSort()
-{
-    int i = 0 , j = 0 , min_index = 0 ;
-    T temp ;   
 
-    for ( i= 0 ; i< iSize -1 ; i++)
+template <class T>
+void ArrayX <T> ::InsertionSort()
+{
+    int i = 0  , j  = 0  , selected = 0; 
+
+    for ( i = 1 ; i < iSize ; i++)
     {
-        min_index = i;
-        for ( j = i+1 ; j< iSize ; j++)
+        //////////////////////////////////
+        for( j = i - 1 , selected = Arr[i]  ; ((j>=0) && Arr[j] > selected)   ;  j-- )
         {
-            if ( Arr[j] < Arr[min_index])
-            {
-                min_index = j;
-            }
+                Arr[ j + 1] = Arr[j];
         }
-        temp = Arr[i];
-        Arr[i] = Arr[min_index];
-        Arr[min_index] = temp;
+        Arr[j+1] = selected;
     }
+    
 }
 
 int main()
@@ -87,7 +83,7 @@ int main()
     aobj->Accept();
     cout<<"Data Before Sorting \n";
     aobj->Display();
-    aobj -> SelectionSort();
+    aobj -> InsertionSort();
     cout<<"Data After Sorting \n";
     aobj->Display();
 
