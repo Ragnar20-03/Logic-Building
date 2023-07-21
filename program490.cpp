@@ -55,11 +55,12 @@ void ArrayX <T>:: Display()
 template <class T>
 void ArrayX <T> ::InsertionSort()
 {
-    int i = 0  , j  = 0  , selected = 0; 
+    int i = 0  , j  = 0  ;
+    T selected = 0; 
 
     for ( i = 1 ; i < iSize ; i++)
     {
-        //////////////////////////////////
+        //////////////////////////////////    ////////////////////////////////     /////
         for( j = i - 1 , selected = Arr[i]  ; ((j>=0) && Arr[j] > selected)   ;  j-- )
         {
                 Arr[ j + 1] = Arr[j];
