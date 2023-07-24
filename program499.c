@@ -144,7 +144,7 @@ int main()
     printf("Elements in Inorder Format:\n");
     Inorder(First);
 
-    if ( Search(First , 14))
+    if ( Search(First , 14897))
     {
         printf("True\n");
     }
