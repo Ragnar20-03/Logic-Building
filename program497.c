@@ -60,13 +60,31 @@ void Insert(PPNODE Head , int No)
 
 }
 
-void Display( PNODE Head)
+void Preorder( PNODE Head)
 {   
     if (Head != NULL)
     {
         printf("%d\t" , Head -> data);
-        Display(Head -> lchild);
-        Display(Head -> rchild);
+        Preorder(Head -> lchild);
+        Preorder(Head -> rchild);
+    }
+}
+void Postorder( PNODE Head)
+{   
+    if (Head != NULL)
+    {
+        Postorder(Head -> lchild);
+        Postorder(Head -> rchild);
+        printf("%d\t" , Head -> data);
+    }
+}
+void Inorder( PNODE Head)
+{   
+    if (Head != NULL)
+    {
+        Inorder(Head -> lchild);
+        printf("%d\t" , Head -> data);
+        Inorder(Head -> rchild);
     }
 }
 
@@ -78,8 +96,14 @@ int main()
     Insert(&First , 25);
     Insert(&First , 15 );
 
-    printf("Elements are:\n");
-    Display(First);
+    printf("Elements in PreOrder Format:\n");
+    Preorder(First);
+
+    printf("Elements in PostOrder Format:\n");
+    Postorder(First);
+
+    printf("Elements in Inorder Format:\n");
+    Inorder(First);
 
     return 0;
 }
