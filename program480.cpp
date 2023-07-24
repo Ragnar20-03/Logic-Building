@@ -141,7 +141,7 @@ int main()
     }
     else 
     {
-        cout<<"Element is not Present in Array\n";
+        cout<<"Element is not P	resent in Array\n";
     }
 
     delete aobj;
