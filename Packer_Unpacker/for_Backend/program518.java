@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-class program517
+class program518
 {
     public static void main(String Arg[]) throws Exception
     {
@@ -25,6 +25,12 @@ class program517
             String HeaderStr = new String(Header);
 
             System.out.println(HeaderStr);
+
+            String Tokens[];
+            Tokens = HeaderStr.split(" ");
+
+            System.out.println("FileName is : "+Tokens [0]);
+            System.out.println("FileSize is : "+Tokens [1]);
 
         }
         catch(Exception obj)
