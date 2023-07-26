@@ -7,9 +7,16 @@ class Student
     public int Age ; 
     public int Marks;
 
-    public Student ( int No , String str , int X , int Y)
+    public static int Generator;
+    
+    static
     {
-        this.Rno = No;
+        Generator = 0 ;
+    }
+
+    public Student ( String str , int X , int Y)
+    {
+        this.Rno = ++Generator;
         this.Name = str;
         this.Age = X;
         this.Marks = Y;
@@ -21,12 +28,12 @@ class Student
     }
 }
 
-class program524
+class program525
 {
     public static void main(String Arg[])
     {
-        Student sobj1 = new Student(1 , "Amit" , 23 , 89);
-        Student sobj2 = new Student(2 , "Sagar" , 24 , 90);     
+        Student sobj1 = new Student("Amit" , 23 , 89);
+        Student sobj2 = new Student("Sagar" , 24 , 90);     
 
         sobj1.Display();
         sobj2.Display();   
