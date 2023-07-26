@@ -23,7 +23,7 @@ class program521
             FileInputStream inobj = new FileInputStream (Packobj);
 
 
-            while ((iRet = inobj.read(Header , 0 , 100))!= 0 );
+            while ((iRet = inobj.read(Header , 0 , 100))>  0 );
             {
                 HeaderStr = new String(Header);
 
