@@ -1,47 +1,48 @@
 #include<iostream>
-
 using namespace std;
 
 class ArrayX
 {
-    public :
+    public:
         int *Arr;
         int iSize;
 
-
-        ArrayX(int );
+        ArrayX(int);
         ~ArrayX();
         void Accept();
         void Display();
 };
 
-ArrayX :: ArrayX( int iNo)
+ArrayX :: ArrayX(int iNo)
 {
-    cout<<"Inside Constructor\n";
-    this -> iSize = iNo;
-    this -> Arr = new int [iSize];
+    cout<<"Inside constructor to allocate memory\n";
+    this->iSize = iNo;
+    this->Arr = new int[iSize];
 }
+
 ArrayX :: ~ArrayX()
 {
-    cout<<"Inside Destructor\n";
+    cout<<"Inside destructor to deallocate memory\n";
     delete []Arr;
 }
 
 void ArrayX :: Accept()
 {
-    cout<<"Inside Accept\n";
-    cout<<"Enter the Elements : \n";
-    for (int iCnt = 0 ; iCnt < iSize ; iCnt++)
+    cout<<"Inside Accept method\n";
+
+    cout<<"Enter the elements : \n";
+    for(int iCnt = 0; iCnt < iSize ; iCnt++)
     {
         cin>>Arr[iCnt];
     }
 }
 
-void ArrayX:: Display()
+void ArrayX :: Display()
 {
-    cout<<"Inside Display\n";
-    cout<<"Elements of Array are : \n";
-    for (int iCnt = 0 ; iCnt < iSize ; iCnt++)
+    cout<<"Inside Display method\n";
+    
+    cout<<"Elements of array are: \n";
+    for(int iCnt = 0; iCnt < iSize ; iCnt++)
     {
         cout<<Arr[iCnt]<<"\t";
     }
@@ -50,18 +51,18 @@ void ArrayX:: Display()
 
 int main()
 {
-    cout<<"Inside Main\n";
+    int iValue = 0;
 
-    int iValue = 0 ;
-    cout<<"Enter the size of Array\n";
+    cout<<"Inside main\n";
+
+    cout<<"Enter the size of array : \n";
     cin>>iValue;
 
-    ArrayX aobj(iValue);
-    
-    aobj.Accept();
-    aobj.Display();
+    ArrayX obj(iValue);
 
-    cout<<" End of Main\n";
+    obj.Accept();
+    obj.Display();
+
+    cout<<"End of main\n";
     return 0;
-
 }

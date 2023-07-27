@@ -1,38 +1,22 @@
 #include<iostream>
 using namespace std;
 
-// 1st Approach
-
-typedef struct  Node
+typedef struct node
 {
-    int data ; 
-    struct Node * next;
-}NODE , * PNODE , ** PPNODE;
-
+    int data;
+    struct node *next;
+}NODE, *PNODE, **PPNODE;
 
 class SinglyLL
-{ 
-    public : 
-      PNODE First ;  //Characteristics;
+{
+    public:
+        PNODE First;        // Characteristics
 
-        SinglyLL ();
-
-        void InsertFirst ( int No);
-        void InsertLast  ( int No);
-        void InsertAtPos   ( int No , int iPos);
-
-        void DeleteFirst  ( );
-        void Deletelast   ( );
-        void DeleteAtPos  ( );
-
-        void Display ( );
-        int Count ( );
-
+        SinglyLL();
 };
 
-int main ()
-{      
-
+int main()
+{
 
     return 0;
 }

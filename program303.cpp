@@ -1,42 +1,35 @@
 #include<iostream>
 using namespace std;
 
-// int iCount  :; 
-
-typedef struct  Node
+typedef struct node
 {
-    int data ; 
-    struct Node * next;
-}NODE , * PNODE , ** PPNODE;
-
+    int data;
+    struct node *next;
+}NODE, *PNODE, **PPNODE;
 
 class SinglyLL
-{ 
-    public : 
-      
-      PNODE First ;  //Characteristics;
-      int iCount ;   // Charactrictics;
+{
+    public:
+        PNODE First;        // Characteristics
+        int iCount;         // Chracteristics
 
-    public :
-      
-        SinglyLL ();
+        SinglyLL();
 
-        void InsertFirst ( int No);
-        void InsertLast  ( int No);
-        void InsertAtPos   ( int No , int iPos);
+        void InsertFirst(int no);
+        void InsertLast(int no);
+        void InsertAtPos(int no, int ipos);
+        
+        void DeleteFirst();
+        void DeleteLast();
+        void DeleteAtPos(int ipos);
 
-        void DeleteFirst  ( );
-        void Deletelast   ( );
-        void DeleteAtPos  ( int iPos );
-
-        void Display ( );
-        int Count ( );
-
+        void Display();
+        int Count();
 };
 
-int main ()
-{      
-    SinglyLL obj1 ();
-
+int main()
+{
+    SinglyLL obj1();
+    
     return 0;
 }

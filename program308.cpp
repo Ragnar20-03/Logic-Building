@@ -1,170 +1,150 @@
-// Implementations of all Behaviours;
 #include<iostream>
 using namespace std;
 
-// int iCount  , characteristics private :; 
-// Implementations of all Behaviours;
-
-
-typedef struct  Node
+typedef struct node
 {
-    int data ; 
-    struct Node * next;
-}NODE , * PNODE , ** PPNODE;
-
+    int data;
+    struct node *next;
+}NODE, *PNODE, **PPNODE;
 
 class SinglyLL
-{ 
-    private : 
-      
-      PNODE _First ;  //Characteristics;
-      int _iCount ;   // Charactrictics;
+{
+    private:
+        PNODE First;        // Characteristics
+        int iCount;         // Chracteristics
 
-    public :
-      
-     SinglyLL ();
-     ~SinglyLL ();
+    public:
+        SinglyLL();
+        ~SinglyLL();
 
-        void InsertFirst ( int No);
-        void InsertLast  ( int No);
-        void InsertAtPos   ( int No , int iPos);
+        void InsertFirst(int no);
+        void InsertLast(int no);
+        void InsertAtPos(int no, int ipos);
+        
+        void DeleteFirst();
+        void DeleteLast();
+        void DeleteAtPos(int ipos);
 
-        void DeleteFirst  ( );
-        void DeleteLast   ( );
-        void DeleteAtPos  ( int iPos );
-
-        void Display ( );
-        int Count ( );
-
+        void Display();
+        int Count();
 };
 
-// Implementations of all Behaviours;
-/*
-    Return_Value Class_Name :: Function_Name ( Parameter_List)
-    {
-        Function_Body;
-    }
-*/
-
-void SinglyLL :: InsertFirst ( int No)
+void SinglyLL:: InsertFirst(int no)
 {
     PNODE newn = NULL;
-        newn = new NODE; // newn = (PNODE) malloc (sizeof ( NODE ));
-    
-    newn -> data = No;
-    newn -> next = NULL;
 
-    if ( _First == NULL) // OR ( iCount == 0)/  / LL is empty;
+    newn = new NODE;    // newn = (PNODE)malloc(sizeof(NODE));
+
+    newn->data = no;
+    newn->next = NULL;
+
+    if(First == NULL)   // LL is empty
     {
-        _First = newn ;
+        First = newn;
     }
-    else   // LL Contains One Node At Least;
+    else    // LL contains atleast one node in it
     {
-        newn -> next = _First ; 
-        _First = newn;
+        newn->next = First;
+        First = newn;
     }
-    _iCount ++;
+    iCount++;
 }
 
-void SinglyLL :: InsertLast ( int No)
+void SinglyLL:: InsertLast(int no)
 {
     PNODE newn = NULL;
-        newn = new NODE; // newn = (PNODE) malloc (sizeof ( NODE ));
-    
-    newn -> data = No;
-    newn -> next = NULL;
 
-    if ( _First == NULL) // OR ( iCount == 0)/  / LL is empty;
+    newn = new NODE;    // newn = (PNODE)malloc(sizeof(NODE));
+
+    newn->data = no;
+    newn->next = NULL;
+
+    if(First == NULL)   // LL is empty
     {
-        _First = newn ;
+        First = newn;
     }
-    else   // LL Contains One Node At Least;
+    else    // LL contains atleast one node in it
     {
-        PNODE temp = _First ;
-        while ( temp -> next != NULL)
+        PNODE temp = First;
+
+        while(temp ->next != NULL)
         {
             temp = temp -> next;
         }
-        temp -> next = newn ;
+        temp->next = newn;
     }
-    _iCount ++;
+    iCount++;
 }
 
-void SinglyLL :: InsertAtPos ( int No , int iPos)
+void SinglyLL:: InsertAtPos(int no, int ipos)
+{}
+
+void SinglyLL:: DeleteFirst()
+{}
+
+void SinglyLL:: DeleteLast()
+{}
+
+void SinglyLL:: DeleteAtPos(int ipos)
+{}
+
+void SinglyLL:: Display()
 {
+    PNODE temp = First;
 
+    cout<<"Elements of Linked list are : "<<"\n";
+
+    while(temp != NULL)
+    {
+        cout<<"| "<<temp->data<<" |->";
+        temp = temp -> next;
+    }
+    cout<<" NULL"<<"\n";
 }
 
-void SinglyLL :: DeleteFirst ( )
+int SinglyLL:: Count()
 {
-
+    return iCount;
 }
 
-void SinglyLL :: DeleteLast ( )
+SinglyLL:: SinglyLL()
 {
+    cout<<"Inside constructor\n";
 
+    First = NULL;
+    iCount = 0;
 }
 
-void SinglyLL :: DeleteAtPos ( int iPos)
+SinglyLL:: ~SinglyLL()
 {
-
+    cout<<"Inside destructor\n";
 }
 
-void SinglyLL :: Display ( )
+int main()
 {
-    cout<<"Elements of Linked List are : \n";
-    PNODE temp = _First  ;
-        while ( temp != NULL)
-        {
-            cout<< " : "<<temp -> data<< "  : ";
-            temp = temp -> next;
-        }
-        cout<<" NULL "<<"\n";
-}
-
-int SinglyLL :: Count ( )
-{
-    return _iCount;
-}
-
-SinglyLL :: SinglyLL ()
-{
-    cout<<"Inside Constructor \n";
-
-    _First = NULL;               //Constuctor;
-    _iCount = 0;
-}
-SinglyLL :: ~SinglyLL ()
-{
-    cout<<"Inside DestruCtor \n";    //Destructor
-}
-int main ()
-{      
     int iRet = 0;
 
     SinglyLL obj1;
     SinglyLL obj2;
 
-    obj1.InsertFirst(101);
     obj1.InsertFirst(51);
     obj1.InsertFirst(21);
     obj1.InsertFirst(11);
-
-    obj1.InsertLast ( 89);
-    obj1.InsertLast ( 87);
-    obj1.InsertLast ( 78);
+    obj1.InsertLast(101);
+    obj1.InsertLast(111);
 
     obj1.Display();
     iRet = obj1.Count();
-    cout<<"Number of Elements of Linked List is  : " <<iRet<<"\n";
 
-    obj2.InsertFirst ( 20);
-    obj2.InsertFirst ( 10);
-    obj2.InsertLast ( 30);
+    cout<<"Number of elements are : "<<iRet<<"\n";
+
+    obj2.InsertFirst(20);
+    obj2.InsertFirst(10);
+    obj2.InsertLast(30);
 
     obj2.Display();
     iRet = obj2.Count();
-    cout<<"Number of Elements of Linked List is  : " <<iRet<<"\n";
 
+    cout<<"Number of elements are : "<<iRet<<"\n";
     return 0;
 }

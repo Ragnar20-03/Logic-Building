@@ -12,55 +12,48 @@ void InsertFirst(PPNODE Head, int no)
     PNODE newn = NULL;
     newn = (PNODE)malloc(sizeof(NODE));         
 
-    newn->data = no;                            
+    newn->data = no;                           
     newn->next = NULL;
 
-    if(*Head == NULL)                           // 3
+    if(*Head == NULL)                          
     {
-        *Head = newn;                           // 4
+        *Head = newn;                           
     }
     else
     {
-        newn->next = *Head;                     // 5
-        *Head = newn;                           // 6
+        newn->next = *Head;                    
+        *Head = newn;                          
+    }
+}
+
+void DisplayI(PNODE Head)
+{
+    while(Head != NULL)
+    {
+        printf("%d\t",Head->data);
+        Head = Head->next; 
     }
 }
 
 void DisplayR(PNODE Head)
 {
-    if ( Head != NULL)
+    if(Head != NULL)
     {
-        printf("%d\t", Head -> data);
-        Head = Head -> next;
-        DisplayR(Head );
-    }
-    else 
-    {
-    printf("\n")
+        printf("%d\t",Head->data);
+        Head = Head->next;
+        DisplayR(Head);
     }
 }
-void DisplayI(PNODE Head)
-{
-    while( Head != NULL)
-    {
-        printf("%d\t",Head -> data);
-        Head = Head -> next;
-    }
-}
-
 
 int main()
 {
     PNODE First = NULL;
-    int iRet = 0;
-
+    
     InsertFirst(&First,50);
     InsertFirst(&First,40);
     InsertFirst(&First,30);
-    InsertFirst(&First,20);
-    InsertFirst(&First,10);
-
-    printf("Elements of Linked List are : \n");
+    InsertFirst(&First,20);  
+    InsertFirst(&First,10); 
 
     DisplayR(First);
 

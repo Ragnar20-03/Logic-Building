@@ -2,155 +2,150 @@
 #include<stdlib.h>
 #include<stdbool.h>
 
-typedef struct Node 
+typedef struct node
 {
     int data;
-    struct Node * lchild ;
-    struct Node * rchild;
-}NODE , * PNODE , **PPNODE;
+    struct node *lchild;
+    struct node *rchild;
+}NODE, *PNODE, **PPNODE;
 
-void Insert(PPNODE Head , int No)
+void Insert(PPNODE Head, int No)
 {
     PNODE newn = NULL;
     PNODE temp = *Head;
-    newn = (PNODE) malloc(sizeof(NODE));
-    newn -> data = No;
-    newn -> lchild = NULL;
-    newn -> rchild = NULL;
 
-    if ( *Head == NULL)
+    newn = (PNODE)malloc(sizeof(NODE));
+    newn->data = No;
+    newn->lchild = NULL;
+    newn->rchild = NULL;
+
+    if(*Head == NULL)
     {
         *Head = newn;
     }
-    else 
+    else
     {
-        while (1)
+        while(1)
         {
-            if ( No == (temp -> data ))
+            if( No == temp->data)
             {
-                printf("Duplicate Element : Unable to Insert\n");
+                printf("Duplicate element : Unable to insert\n");
                 free(newn);
                 break;
             }
-            else if ( No > temp -> data)
+            else if(No > temp->data)
             {
-                if ( temp -> rchild == NULL)
+                if(temp->rchild == NULL)
                 {
-                    temp -> rchild = newn ;
+                    temp->rchild = newn;
                     break;
                 }
-                else 
-                {
-                    temp = temp -> rchild;
-                }
+                temp = temp -> rchild;
             }
-            else if ( No < temp -> data)
+            else if(No < temp->data)
             {
-                if ( temp -> lchild == NULL)
+                if(temp->lchild == NULL)
                 {
-                    temp -> lchild = newn;
+                    temp->lchild = newn;
                     break;
                 }
-               else 
-                {
-                    temp = temp -> lchild;
-                }
+                temp = temp -> lchild;
             }
         }
     }
-
 }
 
-void Preorder( PNODE Head)
-{   
-    if (Head != NULL)
-    {
-        printf("%d\t" , Head -> data);
-        Preorder(Head -> lchild);
-        Preorder(Head -> rchild);
-    }
-}
-void Postorder( PNODE Head)
-{   
-    if (Head != NULL)
-    {
-        Postorder(Head -> lchild);
-        Postorder(Head -> rchild);
-        printf("%d\t" , Head -> data);
-    }
-}
-void Inorder( PNODE Head)
-{   
-    if (Head != NULL)
-    {
-        Inorder(Head -> lchild);
-        printf("%d\t" , Head -> data);
-        Inorder(Head -> rchild);
-    }
-}
-
-bool Search(PNODE Head , int No)
+void Preorder(PNODE Head)
 {
-    bool bFlag = false;
-
-    if ( Head == NULL)
+    if(Head != NULL)
     {
-        printf("Tree is Empty \n");
-        return false;
+        printf("%d\t",Head->data);
+        Preorder(Head->lchild);
+        Preorder(Head->rchild);
     }
-    
-    while ( Head != NULL)
+}
+
+void Postorder(PNODE Head)
+{
+    if(Head != NULL)
     {
-        if ( No == Head -> data)
+        Postorder(Head->lchild);
+        Postorder(Head->rchild);
+        printf("%d\t",Head->data);
+    }
+}
+
+void Inorder(PNODE Head)
+{
+    if(Head != NULL)
+    {
+        Inorder(Head->lchild);
+        printf("%d\t",Head->data);
+        Inorder(Head->rchild);
+    }
+}
+
+bool Search(PNODE Head, int No)
+{
+    bool flag = false;
+
+    if(Head == NULL)
+    {
+        printf("Tree is empty\n");
+        return flag;
+    }
+
+    while(Head != NULL)
+    {
+        if( No == Head -> data)
         {
-            bFlag = true;
+            flag = true;
             break;
         }
-        else if (No > Head -> data)
+        else if(No > Head -> data)
         {
             Head = Head -> rchild;
         }
-        else if ( No < Head -> data)
+        else if(No < Head -> data)
         {
             Head = Head -> lchild;
         }
     }
-    return bFlag;
+    return flag;
 }
 
 int main()
 {
     PNODE First = NULL;
+    bool bRet = false;
 
-    Insert(&First , 21);
-    Insert(&First , 25);
-    Insert(&First , 15 );
-    Insert(&First , 89 );
-    Insert(&First , 56 );
-    Insert(&First , 1566);
-    Insert(&First , 12);
-    Insert(&First , 13 );
-    Insert(&First , 14 );
-    Insert(&First , 15 );
-    Insert(&First , 16 );
-    Insert(&First , 178 );
+    Insert(&First,21);
+    Insert(&First,25);
+    Insert(&First,15);
+    Insert(&First,78);
+    Insert(&First,56);
+    Insert(&First,10);
+    Insert(&First,55);
+    Insert(&First,34);
+    Insert(&First,20);                        
 
-    printf("Elements in PreOrder Format:\n");
+    printf("\nElements in Preorder format : \n");
     Preorder(First);
 
-    printf("Elements in PostOrder Format:\n");
+    printf("\nElements in Postorder format : \n");
     Postorder(First);
 
-    printf("Elements in Inorder Format:\n");
+    printf("\nElements in Inorder format : \n");
     Inorder(First);
 
-    if ( Search(First , 14897))
+    bRet = Search(First,516);
+    if(bRet == true)
     {
-        printf("True\n");
+        printf("\nElement is there in BST\n");
     }
-    else 
+    else
     {
-        printf("False\n");
+        printf("\nElement is not there in BST");
     }
 
     return 0;

@@ -1,104 +1,82 @@
-// Implementations of all Behaviours;
 #include<iostream>
 using namespace std;
 
-// int iCount  , characteristics private :; 
-// Implementations of all Behaviours;
-
-
-typedef struct  Node
+typedef struct node
 {
-    int data ; 
-    struct Node * next;
-}NODE , * PNODE , ** PPNODE;
-
+    int data;
+    struct node *next;
+}NODE, *PNODE, **PPNODE;
 
 class SinglyLL
-{ 
-    private : 
-      
-      PNODE _First ;  //Characteristics;
-      int _iCount ;   // Charactrictics;
+{
+    private:
+        PNODE First;        // Characteristics
+        int iCount;         // Chracteristics
 
-    public :
-      
-     SinglyLL ();
+    public:
+        SinglyLL();
 
-        void InsertFirst ( int No);
-        void InsertLast  ( int No);
-        void InsertAtPos   ( int No , int iPos);
+        void InsertFirst(int no);
+        void InsertLast(int no);
+        void InsertAtPos(int no, int ipos);
+        
+        void DeleteFirst();
+        void DeleteLast();
+        void DeleteAtPos(int ipos);
 
-        void DeleteFirst  ( );
-        void DeleteLast   ( );
-        void DeleteAtPos  ( int iPos );
-
-        void Display ( );
-        int Count ( );
-
+        void Display();
+        int Count();
 };
 
-// Implementations of all Behaviours;
+// Implmentations of all behaviours
+
 /*
-    Return_Value Class_Name :: Function_Name ( Parameter_List)
+    Return_Value Class_Name :: Function_Name(Parameter_List)
     {
         Function_Body;
     }
 */
 
-void SinglyLL :: InsertFirst ( int No)
-{
+void SinglyLL:: InsertFirst(int no)
+{}
 
-}
+void SinglyLL:: InsertLast(int no)
+{}
 
-void SinglyLL :: InsertLast ( int No)
-{
+void SinglyLL:: InsertAtPos(int no, int ipos)
+{}
 
-}
+void SinglyLL:: DeleteFirst()
+{}
 
-void SinglyLL :: InsertAtPos ( int No , int iPos)
-{
+void SinglyLL:: DeleteLast()
+{}
 
-}
+void SinglyLL:: DeleteAtPos(int ipos)
+{}
 
-void SinglyLL :: DeleteFirst ( )
-{
+void SinglyLL:: Display()
+{}
 
-}
-
-void SinglyLL :: DeleteLast ( )
-{
-
-}
-
-void SinglyLL :: DeleteAtPos ( int iPos)
-{
-
-}
-
-void SinglyLL :: Display ( )
-{
-
-}
-
-int SinglyLL :: Count ( )
+int SinglyLL:: Count()
 {
     return 0;
 }
 
-SinglyLL :: SinglyLL ()
+SinglyLL:: SinglyLL()
 {
-    cout<<"Inside Constructor \n";
+    cout<<"Inside constructor\n";
 
-    _First = NULL;               //Constuctor;
-    _iCount = 0;
+    First = NULL;
+    iCount = 0;
 }
 
-int main ()
-{      
+int main()
+{
     SinglyLL obj1;
     SinglyLL obj2;
 
-    // cout<<"Size of Linked list is : "<<obj1._iCount; // ERROR
+    // cout<<"Size of LL is : "<<obj1.iCount;
 
     return 0;
 }
